@@ -1,25 +1,28 @@
 import styled from 'styled-components';
 
 const Container = styled.header`
-  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 7rem;
 `;
 
 const Greetings = styled.h5`
-  font-size: 1.5rem;
-  font-weight: bold;
   margin: 0;
+  font-weight: bold;
+  font-size: 1rem;
 `;
 
 const Name = styled.h1`
-  font-size: 4rem;
-  font-weight: bold;
   margin: 0;
+  font-weight: bold;
+  font-size: 3rem;
 `;
 
 const Position = styled.h3`
-  font-size: 2rem;
-  font-weight: normal;
   margin: 0;
+  font-weight: normal;
+  font-size: 1rem;
 `;
 
 const Header = () => (

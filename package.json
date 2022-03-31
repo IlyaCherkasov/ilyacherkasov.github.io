@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "5.16.3",
+    "@testing-library/react": "12.1.4",
     "@types/jest": "27.4.1",
     "@types/node": "17.0.23",
     "@types/react": "17.0.43",
@@ -28,7 +29,6 @@
     "workbox-streams": "6.5.2"
   },
   "devDependencies": {
-    "@testing-library/react": "12.1.4",
     "@testing-library/user-event": "14.0.0",
     "@typescript-eslint/eslint-plugin": "5.16.0",
     "@typescript-eslint/parser": "5.15.0",
@@ -38,13 +38,25 @@
     "eslint-plugin-import": "2.25.4",
     "eslint-plugin-jsx-a11y": "6.5.1",
     "eslint-plugin-react": "7.29.4",
-    "eslint-plugin-react-hooks": "4.3.0"
+    "eslint-plugin-react-hooks": "4.3.0",
+    "postcss-scss": "4.0.3",
+    "stylelint": "14.6.1",
+    "stylelint-config-rational-order": "0.1.2",
+    "stylelint-config-recommended": "7.0.0",
+    "stylelint-config-standard-scss": "3.0.0",
+    "stylelint-config-styled-components": "0.1.1",
+    "stylelint-order": "5.0.0",
+    "stylelint-processor-styled-components": "1.10.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --fix src --ext .js,.ts,.tsx",
+    "lint:css": "stylelint './src/**/*.(js|ts|tsx)'",
+    "types:check": "tsc -p tsconfig.json --noEmit"
   },
   "eslintConfig": {
     "extends": [

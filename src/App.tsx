@@ -4,28 +4,31 @@ import BackgroundAsset from 'assets/bg-texture.png';
 import Header from 'components/Header';
 
 const GlobalStyle = createGlobalStyle`
-  html, body, #root {
-    height: 100%;
+  html,
+  body,
+  #root {
     width: 100%;
+    height: 100%;
     margin: 0;
     scroll-behavior: smooth;
+    color: ${theme.colors.text};
+    font-size: 16px;
+    font-family: "EB Garamond", serif;
     background: ${theme.colors.background};
     background-image: url(${BackgroundAsset});
-    color: ${theme.colors.text};
-    font-family: 'EB Garamond', serif;
-    font-size: 16px;
   }
+
   svg {
     flex-shrink: 0;
   }
 `;
 
 const Container = styled.div`
-  max-width: ${({ theme }) => theme.breakpoints.desktop}px;
-  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  max-width: ${({ theme }) => theme.breakpoints.desktop}px;
+  margin: auto;
   text-align: center;
 `;
 
