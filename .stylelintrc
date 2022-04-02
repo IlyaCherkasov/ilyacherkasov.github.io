@@ -8,5 +8,8 @@
     "stylelint-config-styled-components",
     "stylelint-config-rational-order"
   ],
-  "customSyntax": "postcss-scss"
+  "customSyntax": "postcss-scss",
+  "rules": {
+    "value-keyword-case": null
+  }
 }

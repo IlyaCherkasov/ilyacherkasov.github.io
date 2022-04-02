@@ -12,14 +12,21 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     scroll-behavior: smooth;
     color: ${theme.colors.text};
-    font-size: 16px;
+    font-size: 20px;
     font-family: "EB Garamond", serif;
+    line-height: 1.7;
     background: ${theme.colors.background};
     background-image: url(${BackgroundAsset});
   }
 
   svg {
     flex-shrink: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
   }
 `;
 
