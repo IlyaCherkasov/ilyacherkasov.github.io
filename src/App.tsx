@@ -4,6 +4,7 @@ import theme from 'helpers/theme';
 import BackgroundAsset from 'assets/bg-texture.png';
 import Header from 'components/Header';
 import Navigation from 'components/Navigation';
+import About from 'components/About';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -18,6 +19,14 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.7;
     background: ${theme.colors.background};
     background-image: url(${BackgroundAsset});
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 0;
   }
 
   svg {
@@ -37,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.colors.primary};
     text-decoration: none;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out;
 
     :hover,
     :focus {
@@ -79,6 +88,7 @@ const App = () => {
       <Container>
         <Header />
         <Navigation activeSection={activeSection} />
+        <About />
       </Container>
     </ThemeProvider>
   );

@@ -27,13 +27,11 @@ const Greetings = styled.h5`
 `;
 
 const Name = styled.h1`
-  margin: 0;
   font-weight: 500;
   font-size: 2.5rem;
 `;
 
 const Position = styled.h5`
-  margin: 0;
   font-weight: 500;
   opacity: 0.6;
 `;

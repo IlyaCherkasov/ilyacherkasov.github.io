@@ -6,7 +6,7 @@ import { ReactComponent as PossibilitiesSvg } from 'assets/possibilities.svg';
 import { ReactComponent as ContactSvg } from 'assets/contact.svg';
 
 const NavBar = styled.nav`
-  position: sticky;
+  position: fixed;
   bottom: 1.5rem;
   left: 50%;
   display: flex;
