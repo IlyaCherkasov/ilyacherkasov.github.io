@@ -15,6 +15,8 @@ const theme = {
     white: '#fff',
     black: '#000',
     gold: '#fdb827',
+    purple: '#542583',
+    brightLilac: '#c095f8',
   },
 };
 

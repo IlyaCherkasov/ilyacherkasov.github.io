@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import IconLink from 'components/IconLink';
 import OutlineButton from 'components/OutlineButton';
 import PrimaryButton from 'components/PrimaryButton';
 import useCv from 'helpers/useCv';
@@ -12,18 +11,18 @@ const Container = styled.header`
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 90%;
   height: 100vh;
-  
+
   ${({ theme }) => theme.media.mobile} {
     height: auto;
-  };
+  }
 `;
 
 const Greetings = styled.h5`
-  margin: 5rem 0 0 0;
+  margin: 5rem 0 0;
   font-weight: 500;
 `;
 
@@ -48,9 +47,9 @@ const CtaButtons = styled.div`
 `;
 
 const Me = styled.div`
+  width: calc(100% - 2rem);
   max-width: 20rem;
   max-height: 28rem;
-  width: calc(100% - 2rem);
   aspect-ratio: 20/28;
   margin-top: 2rem;
   padding: 1rem 2rem 0.5rem 0;
@@ -61,8 +60,8 @@ const Me = styled.div`
 
 const Socials = styled.div`
   position: absolute;
-  left: 0;
   bottom: 3rem;
+  left: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -70,15 +69,15 @@ const Socials = styled.div`
   width: 20px;
 
   ::after {
-    content: '';
     width: 1px;
     height: 2rem;
-    background: ${({ theme }) => theme.colors.primary};;
+    background: ${({ theme }) => theme.colors.primary};
+    content: "";
   }
 
   ${({ theme }) => theme.media.mobile} {
     display: none;
-  };
+  }
 `;
 
 const ScrollDown = styled.a`
@@ -91,9 +90,9 @@ const ScrollDown = styled.a`
   align-items: center;
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.9rem;
-  transition: all 0.3s ease-in-out;
   transform: translateX(40%) rotate(90deg);
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 
   :hover,
   :focus {
@@ -102,8 +101,26 @@ const ScrollDown = styled.a`
 
   ${({ theme }) => theme.media.mobile} {
     display: none;
-  };
+  }
 `;
+
+const socialLinks = [
+  {
+    label: 'telegram',
+    url: 'https://t.me/cherkasik',
+    icon: <TelegramSvg />,
+  },
+  {
+    label: 'linkedin',
+    url: 'https://linkedin.com/in/cherkasik',
+    icon: <LinkedinSvg />,
+  },
+  {
+    label: 'github',
+    url: 'https://github.com/IlyaCherkasov',
+    icon: <GithubSvg />,
+  },
+];
 
 const Header = () => (
   <Container>
@@ -118,9 +135,16 @@ const Header = () => (
       <img src={MePng} alt="me" />
     </Me>
     <Socials>
-      <IconLink link="https://t.me/cherkasik"><TelegramSvg /></IconLink>
-      <IconLink link="https://linkedin.com/in/cherkasik"><LinkedinSvg /></IconLink>
-      <IconLink link="https://github.com/IlyaCherkasov"><GithubSvg /></IconLink>
+      {socialLinks.map((social) => (
+        <a
+          href={social.url}
+          target="_blank"
+          rel="noreferrer"
+          key={social.label}
+        >
+          {social.icon}
+        </a>
+      ))}
     </Socials>
     <ScrollDown>Scroll Down</ScrollDown>
   </Container>
