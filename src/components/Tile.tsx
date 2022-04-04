@@ -7,11 +7,17 @@ const Container = styled.div`
   align-items: center;
   padding: 2rem;
   color: ${({ theme }) => theme.colors.white};
+  border: 1px solid ${({ theme }) => theme.colors.purple}90;
   border-radius: 1rem;
   background-color: ${({ theme }) => theme.colors.purple}90;
+  transition: background-color 0.3s ease-in-out;
 
   svg {
     fill: ${({ theme }) => theme.colors.brightLilac};
+  }
+
+  :hover {
+    background: none;
   }
 `;
 

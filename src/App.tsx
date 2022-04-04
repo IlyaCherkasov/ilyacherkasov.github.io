@@ -5,6 +5,7 @@ import BackgroundAsset from 'assets/bg-texture.png';
 import Header from 'components/Header';
 import Navigation from 'components/Navigation';
 import About from 'components/About';
+import Footer from 'components/Footer';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -70,13 +71,13 @@ const App = () => {
 
   const handleScroll = () => {
     const sections = document.querySelectorAll('section');
+    let newActiveSection = '';
     sections.forEach((section) => {
-      let newActiveSection = '';
       if (window.scrollY >= section.offsetTop) {
         newActiveSection = section.getAttribute('id') || '';
       }
-      setActiveSection(newActiveSection);
     });
+    setActiveSection(newActiveSection);
   };
 
   useEffect(() => {
@@ -91,6 +92,7 @@ const App = () => {
         <Navigation activeSection={activeSection} />
         <About />
       </Container>
+      <Footer />
     </ThemeProvider>
   );
 };

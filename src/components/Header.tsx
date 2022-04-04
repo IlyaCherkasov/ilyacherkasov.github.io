@@ -144,7 +144,7 @@ const Header = () => (
         </a>
       ))}
     </Socials>
-    <ScrollDown>Scroll Down</ScrollDown>
+    <ScrollDown href="#contact">Scroll Down</ScrollDown>
   </Container>
 );
 

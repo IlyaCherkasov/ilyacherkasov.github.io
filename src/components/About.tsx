@@ -86,8 +86,8 @@ const About = () => (
         I&apos;m a graduate of ITMO University. My bachelor degree was in sphere of Information
         Technologies and Programming at department of Information Systems.
         Started my career in university with small startup where I developed myself as
-        a professional and a good teammate. In my free time love to throw some discs
-        because my hobby is disc-golf and programming of course. Also my hobbies intertwines
+        a professional and a good teammate. In my spare time love to throw some discs
+        because my hobby is disc-golf and programming of course. Also my hobbies are intertwined
         into development site for Russian Disc-Golf Association to evolve disc-golf into
         something more than hobby for all professional players.
         <PrimaryButton name="Let's talk" link="#contact" />
