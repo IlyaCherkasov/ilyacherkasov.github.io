@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import Section from 'components/Section';
 import Img from 'assets/about.jpeg';
-
-const Header = styled.h2`
-  margin: 0;
-  color: ${({ theme }) => theme.colors.primary};
-  font-size: 1.7rem;
-`;
+import { ReactComponent as MedalSvg } from 'assets/medal.svg';
+import { ReactComponent as UserSvg } from 'assets/users.svg';
+import { ReactComponent as ProjectsSvg } from 'assets/projects.svg';
+import PrimaryButton from 'components/PrimaryButton';
+import Tile from 'components/Tile';
 
 const Container = styled.div`
   display: grid;
@@ -14,6 +13,19 @@ const Container = styled.div`
   gap: 15%;
   width: 100%;
   margin-top: 1.5rem;
+  text-align: left;
+
+  ${({ theme }) => theme.media.mobile} {
+    grid-template-columns: 100%;
+    gap: 5%;
+    text-align: center;
+  };
+`;
+
+const Header = styled.h2`
+  margin: 0;
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 1.7rem;
 `;
 
 const ImageContainer = styled.div`
@@ -34,7 +46,28 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ContentContainer = styled.div``;
+const ContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+
+  ${({ theme }) => theme.media.mobile} {
+    align-items: center;
+  }
+`;
+
+const Tiles = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  width: 100%;
+  
+  ${({ theme }) => theme.media.mobile} {
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
+  }
+`;
 
 const About = () => (
   <Section id="about">
@@ -45,7 +78,19 @@ const About = () => (
         <img src={Img} alt="" />
       </ImageContainer>
       <ContentContainer>
-        content
+        <Tiles>
+          <Tile name="Experience" description="2+ Years Working"><MedalSvg /></Tile>
+          <Tile name="People" description="No Angry Teams"><UserSvg /></Tile>
+          <Tile name="Projects" description="2 Launched"><ProjectsSvg /></Tile>
+        </Tiles>
+        I&apos;m a graduate of ITMO University. My bachelor degree was in sphere of Information
+        Technologies and Programming at department of Information Systems.
+        Started my career in university with small startup where I developed myself as
+        a professional and a good teammate. In my free time love to throw some discs
+        because my hobby is disc-golf and programming of course. Also my hobbies intertwines
+        into development site for Russian Disc-Golf Association to evolve disc-golf into
+        something more than hobby for all professional players.
+        <PrimaryButton name="Let's talk" link="#contact" />
       </ContentContainer>
     </Container>
   </Section>

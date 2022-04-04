@@ -18,6 +18,7 @@ const NavBar = styled.nav`
   border-radius: 100vh;
   transform: translateX(-50%);
   backdrop-filter: blur(15px);
+  z-index: 1000;
 `;
 
 const NavItem = styled.a<{active?: boolean}>`
