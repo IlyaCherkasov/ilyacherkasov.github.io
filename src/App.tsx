@@ -5,7 +5,7 @@ import BackgroundAsset from 'assets/bg-texture.png';
 import Header from 'components/Header';
 import Navigation from 'components/Navigation';
 import About from 'components/About';
-import Footer from 'components/Footer';
+import Experience from 'components/Experience';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -63,6 +63,7 @@ const Container = styled.div`
   align-items: center;
   max-width: ${({ theme }) => theme.breakpoints.desktop}px;
   margin: auto;
+  padding-bottom: 10rem;
   text-align: center;
 `;
 
@@ -91,8 +92,8 @@ const App = () => {
         <Header />
         <Navigation activeSection={activeSection} />
         <About />
+        <Experience />
       </Container>
-      <Footer />
     </ThemeProvider>
   );
 };
