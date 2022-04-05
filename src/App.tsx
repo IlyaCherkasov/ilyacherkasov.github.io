@@ -7,6 +7,7 @@ import Navigation from 'components/Navigation';
 import About from 'components/About';
 import Experience from 'components/Experience';
 import Possibilities from 'components/Possibilities';
+import Portfolio from 'components/Portfolio';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -95,6 +96,7 @@ const App = () => {
         <About />
         <Experience />
         <Possibilities />
+        <Portfolio />
       </Container>
     </ThemeProvider>
   );

@@ -9,6 +9,7 @@ const NavBar = styled.nav`
   position: fixed;
   bottom: 1.5rem;
   left: 50%;
+  z-index: 1000;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -18,11 +19,13 @@ const NavBar = styled.nav`
   border-radius: 100vh;
   transform: translateX(-50%);
   backdrop-filter: blur(15px);
-  z-index: 1000;
 `;
 
 const NavItem = styled.a<{active?: boolean}>`
-  padding: 0.2rem 0.55rem;
+  display: flex;
+  height: 1rem;
+  aspect-ratio: 1;
+  padding: 0.55rem;
   color: ${({ theme }) => theme.colors.brightLilac};
   border-radius: 100vh;
   ${(props) => (props.active

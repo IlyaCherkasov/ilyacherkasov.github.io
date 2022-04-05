@@ -3,10 +3,10 @@ import { ReactComponent as CheckSvg } from 'assets/check.svg';
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
   flex-basis: 40%;
-  align-items: flex-start;
+  flex-direction: row;
   gap: 1rem;
+  align-items: flex-start;
 
   svg {
     margin-top: 0.4rem;

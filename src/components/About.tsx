@@ -19,7 +19,7 @@ const Container = styled.div`
     grid-template-columns: 100%;
     gap: 5%;
     text-align: center;
-  };
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -56,7 +56,7 @@ const Tiles = styled.div`
   flex-flow: row wrap;
   gap: 1rem;
   width: 100%;
-  
+
   ${({ theme }) => theme.media.mobile} {
     width: calc(100% - 2rem);
     margin: 0 1rem;

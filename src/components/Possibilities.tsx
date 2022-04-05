@@ -10,8 +10,8 @@ const Container = styled.div`
 
 const Possibility = styled.div`
   display: flex;
-  flex-flow: column nowrap;
   flex: 1;
+  flex-flow: column nowrap;
   height: min-content;
   padding: 0 0 1rem;
   background: ${({ theme }) => theme.colors.purple}90;
@@ -29,8 +29,8 @@ const Possibility = styled.div`
 
   li {
     display: flex;
-    justify-content: flex-start;
     align-items: flex-start;
+    justify-content: flex-start;
     padding: 0 2rem;
     text-align: left;
   }

@@ -6,16 +6,15 @@ const Container = styled.div`
   display: flex;
   flex-flow: row wrap;
   gap: 2rem;
-  padding: 0 1rem;
 `;
 
 const DevelopmentBlock = styled.div`
   flex: 1;
   padding: 2rem 4rem;
   color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.purple}90;
   border: 1px solid ${({ theme }) => theme.colors.purple}90;
   border-radius: 2rem;
-  background-color: ${({ theme }) => theme.colors.purple}90;
   transition: background-color 0.3s ease-in-out;
 
   :hover {

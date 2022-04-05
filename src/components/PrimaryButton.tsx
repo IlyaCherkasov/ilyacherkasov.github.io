@@ -9,10 +9,15 @@ const LinkButton = styled(Button)`
 interface Props {
   name: string,
   link: string,
+  target?: string,
 }
 
-const PrimaryButton = ({ name, link }: Props) => (
-  <LinkButton href={link}>{ name }</LinkButton>
+const PrimaryButton = ({ name, link, target }: Props) => (
+  <LinkButton href={link} target={target}>{ name }</LinkButton>
 );
+
+PrimaryButton.defaultProps = {
+  target: '_self',
+};
 
 export default PrimaryButton;

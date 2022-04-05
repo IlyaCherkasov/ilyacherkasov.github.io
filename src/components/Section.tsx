@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const StyledSection = styled.section`
-  width: 100%;
-  padding-top: 5rem;
+  width: calc(100% - 2rem);
+  padding: 5rem 1rem 0;
 `;
 
 const Header = styled.h2`
