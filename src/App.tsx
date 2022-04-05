@@ -6,6 +6,7 @@ import Header from 'components/Header';
 import Navigation from 'components/Navigation';
 import About from 'components/About';
 import Experience from 'components/Experience';
+import Possibilities from 'components/Possibilities';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -93,6 +94,7 @@ const App = () => {
         <Navigation activeSection={activeSection} />
         <About />
         <Experience />
+        <Possibilities />
       </Container>
     </ThemeProvider>
   );
