@@ -9,6 +9,7 @@ import Experience from 'components/Experience';
 import Possibilities from 'components/Possibilities';
 import Portfolio from 'components/Portfolio';
 import Companies from 'components/Companies';
+import Contact from 'components/Contact';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -99,6 +100,7 @@ const App = () => {
         <Companies />
         <Possibilities />
         <Portfolio />
+        <Contact />
       </Container>
     </ThemeProvider>
   );

@@ -19,6 +19,11 @@ const NavBar = styled.nav`
   border-radius: 100vh;
   transform: translateX(-50%);
   backdrop-filter: blur(15px);
+  transition: gap 0.3s ease-in-out;
+
+  ${({ theme }) => theme.media.mobile} {
+    gap: 0.5rem;
+  }
 `;
 
 const NavItem = styled.a<{active?: boolean}>`
