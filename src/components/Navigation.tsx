@@ -9,6 +9,7 @@ const NavBar = styled.nav`
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  max-width: 14.5rem;
   align-items: center;
   padding: 0.5rem 1.5rem;
   background: rgb(0 0 0 / 30%);
@@ -19,6 +20,7 @@ const NavBar = styled.nav`
 
   ${({ theme }) => theme.media.mobile} {
     gap: 0.5rem;
+    max-width: 12.5rem;
   }
 `;
 

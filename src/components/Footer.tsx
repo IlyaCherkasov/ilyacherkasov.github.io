@@ -72,12 +72,13 @@ const Footer = () => (
     <h2>CHERKASIK</h2>
     <Nav>
       {extendedNavigation.map((item) => (
-        <a href={`#${item.name}`}>{item.title}</a>
+        <a href={`#${item.name}`} key={item.name}>{item.title}</a>
       ))}
     </Nav>
     <SocialLinks>
       {socialLinks.map((link) => (
         <a
+          key={link.label}
           href={link.url}
           title={link.label}
           target="_blank"
