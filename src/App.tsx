@@ -10,6 +10,7 @@ import Possibilities from 'components/Possibilities';
 import Portfolio from 'components/Portfolio';
 import Companies from 'components/Companies';
 import Contact from 'components/Contact';
+import Footer from 'components/Footer';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -102,6 +103,7 @@ const App = () => {
         <Portfolio />
         <Contact />
       </Container>
+      <Footer />
     </ThemeProvider>
   );
 };

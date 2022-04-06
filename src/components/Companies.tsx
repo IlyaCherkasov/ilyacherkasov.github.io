@@ -20,7 +20,7 @@ const Container = styled.div`
 `;
 
 const Companies = () => (
-  <Section id="experience" header="Companies" subheader="Where I Worked">
+  <Section id="companies" header="Companies" subheader="Where I Worked">
     <Container>
       <a href="https://puncher.app" target="_blank" rel="noreferrer">
         <PuncherSvg />

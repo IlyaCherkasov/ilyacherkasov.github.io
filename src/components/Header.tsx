@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 import OutlineButton from 'components/OutlineButton';
 import PrimaryButton from 'components/PrimaryButton';
+import socialLinks from 'helpers/socialLinks';
 import useCv from 'helpers/useCv';
 import MePng from 'assets/main.png';
-import { ReactComponent as GithubSvg } from 'assets/github.svg';
-import { ReactComponent as LinkedinSvg } from 'assets/linkedin.svg';
-import { ReactComponent as TelegramSvg } from 'assets/telegram.svg';
 
 const Container = styled.header`
   position: relative;
@@ -101,24 +99,6 @@ const ScrollDown = styled.a`
     display: none;
   }
 `;
-
-const socialLinks = [
-  {
-    label: 'telegram',
-    url: 'https://t.me/cherkasik',
-    icon: <TelegramSvg />,
-  },
-  {
-    label: 'linkedin',
-    url: 'https://linkedin.com/in/cherkasik',
-    icon: <LinkedinSvg />,
-  },
-  {
-    label: 'github',
-    url: 'https://github.com/IlyaCherkasov',
-    icon: <GithubSvg />,
-  },
-];
 
 const Header = () => (
   <Container>

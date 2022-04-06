@@ -84,7 +84,7 @@ const portfolio = [
 ];
 
 const Portfolio = () => (
-  <Section id="possibilities" header="Portfolio" subheader="My Recent Work">
+  <Section id="portfolio" header="Portfolio" subheader="My Recent Work">
     <Container>
       {portfolio.map((item) => (
         <Tile key={item.title}>
