@@ -51,6 +51,10 @@ const Form = styled.form`
   gap: 1rem;
   align-items: flex-start;
   justify-content: center;
+
+  ${({ theme }) => theme.media.mobile} {
+    align-items: center;
+  }
 `;
 
 const InputStyles = css`
