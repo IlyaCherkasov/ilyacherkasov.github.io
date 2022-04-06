@@ -32,6 +32,7 @@ const NavItem = styled.a<{active?: boolean}>`
     ? css`background: ${({ theme }) => theme.colors.purple};`
     : ''
   )}
+  transition: background 0.3s ease-in-out;
 `;
 
 interface Props {

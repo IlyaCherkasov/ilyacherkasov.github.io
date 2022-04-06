@@ -8,6 +8,7 @@ import About from 'components/About';
 import Experience from 'components/Experience';
 import Possibilities from 'components/Possibilities';
 import Portfolio from 'components/Portfolio';
+import Companies from 'components/Companies';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -76,7 +77,7 @@ const App = () => {
     const sections = document.querySelectorAll('section');
     let newActiveSection = '';
     sections.forEach((section) => {
-      if (window.scrollY >= section.offsetTop) {
+      if (window.scrollY + 10 >= section.offsetTop) {
         newActiveSection = section.getAttribute('id') || '';
       }
     });
@@ -95,6 +96,7 @@ const App = () => {
         <Navigation activeSection={activeSection} />
         <About />
         <Experience />
+        <Companies />
         <Possibilities />
         <Portfolio />
       </Container>
