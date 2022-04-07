@@ -30,6 +30,7 @@ const ContactTile = styled.div`
   background-color: ${({ theme }) => theme.colors.purple}90;
   border: 1px solid ${({ theme }) => theme.colors.purple}90;
   border-radius: 1rem;
+  transition: background 0.3s ease-in-out;
 
   :hover {
     background: none;
