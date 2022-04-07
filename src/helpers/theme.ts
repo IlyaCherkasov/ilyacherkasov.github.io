@@ -9,9 +9,9 @@ const theme = {
     tablet: '@media (max-width: 1024px)',
   },
   colors: {
-    primary: '#8D72EC',
+    primary: '#8d72ec',
     text: '#ffffff',
-    background: '#27134C',
+    background: '#27134c',
     white: '#ffffff',
     black: '#000000',
     gold: '#fdb827',
