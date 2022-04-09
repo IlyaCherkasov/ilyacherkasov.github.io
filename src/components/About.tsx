@@ -16,8 +16,9 @@ const Container = styled.div`
   text-align: left;
 
   ${({ theme }) => theme.media.mobile} {
-    grid-template-columns: 100%;
-    gap: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     text-align: center;
   }
 `;
@@ -48,6 +49,7 @@ const ContentContainer = styled.div`
 
   ${({ theme }) => theme.media.mobile} {
     align-items: center;
+    padding: 0 1rem;
   }
 `;
 
@@ -58,8 +60,7 @@ const Tiles = styled.div`
   width: 100%;
 
   ${({ theme }) => theme.media.mobile} {
-    width: calc(100% - 2rem);
-    margin: 0 1rem;
+    width: 100%;
   }
 `;
 
