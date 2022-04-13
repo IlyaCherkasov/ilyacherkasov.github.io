@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import OutlineButton from 'components/OutlineButton';
-import PrimaryButton from 'components/PrimaryButton';
+import { motion } from 'framer-motion';
+import { MOutlineButton } from 'components/OutlineButton';
+import { MPrimaryButton } from 'components/PrimaryButton';
 import socialLinks from 'helpers/socialLinks';
 import useCv from 'helpers/useCv';
 import MePng from 'assets/main.png';
@@ -19,17 +20,17 @@ const Container = styled.header`
   }
 `;
 
-const Greetings = styled.h5`
+const Greetings = styled(motion.h5)`
   margin: 5rem 0 0;
   font-weight: 500;
 `;
 
-const Name = styled.h1`
+const Name = styled(motion.h1)`
   font-weight: 500;
   font-size: 2.5rem;
 `;
 
-const Position = styled.h5`
+const Position = styled(motion.h5)`
   font-weight: 500;
   opacity: 0.6;
 `;
@@ -40,9 +41,13 @@ const CtaButtons = styled.div`
   gap: 1rem;
   justify-content: center;
   margin-top: 2rem;
+
+  ${({ theme }) => theme.media.mobile} {
+    overflow: hidden;
+  }
 `;
 
-const Me = styled.div`
+const Me = styled(motion.div)`
   width: calc(100% - 2rem);
   max-width: 20rem;
   max-height: 28rem;
@@ -54,7 +59,7 @@ const Me = styled.div`
   border-radius: 100vh 100vh 0 0;
 `;
 
-const Socials = styled.div`
+const Socials = styled(motion.div)`
   position: absolute;
   bottom: 3rem;
   left: 0;
@@ -76,7 +81,7 @@ const Socials = styled.div`
   }
 `;
 
-const ScrollDown = styled.a`
+const ScrollDown = styled(motion.a)`
   position: absolute;
   right: 0;
   bottom: 4rem;
@@ -86,9 +91,8 @@ const ScrollDown = styled.a`
   align-items: center;
   color: ${({ theme }) => theme.colors.primary};
   font-size: 0.9rem;
-  transform: translateX(40%) rotate(90deg);
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 
   :hover,
   :focus {
@@ -102,17 +106,56 @@ const ScrollDown = styled.a`
 
 const Header = () => (
   <Container>
-    <Greetings>Hello, I&apos;m</Greetings>
-    <Name>Ilya Cherkasov</Name>
-    <Position>JavaScript Developer</Position>
+    <Greetings
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.5, default: { duration: 1 } }}
+    >
+      Hello, I&apos;m
+    </Greetings>
+    <Name
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ default: { duration: 1 } }}
+    >
+      Ilya Cherkasov
+    </Name>
+    <Position
+      initial={{ y: 50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 1, default: { duration: 1 } }}
+    >
+      JavaScript Developer
+    </Position>
     <CtaButtons>
-      <OutlineButton name="Download CV" link={useCv()} downloadFileName="Ilya Cherkasov CV" />
-      <PrimaryButton name="Let's talk" link="#contact" />
+      <MOutlineButton
+        name="Download CV"
+        link={useCv()}
+        downloadFileName="Ilya Cherkasov CV"
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ delay: 1.2, default: { duration: 1 } }}
+      />
+      <MPrimaryButton
+        name="Let's talk"
+        link="#contact"
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ delay: 1.2, default: { duration: 1 } }}
+      />
     </CtaButtons>
-    <Me>
+    <Me
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ default: { duration: 1 } }}
+    >
       <img src={MePng} alt="me" />
     </Me>
-    <Socials>
+    <Socials
+      initial={{ x: -50, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ default: { duration: 1 } }}
+    >
       {socialLinks.map((social) => (
         <a
           href={social.url}
@@ -124,7 +167,14 @@ const Header = () => (
         </a>
       ))}
     </Socials>
-    <ScrollDown href="#contact">Scroll Down</ScrollDown>
+    <ScrollDown
+      href="#contact"
+      initial={{ x: 80, opacity: 0, rotate: '90deg' }}
+      animate={{ x: 30, opacity: 1, rotate: '90deg' }}
+      transition={{ default: { duration: 1 } }}
+    >
+      Scroll Down
+    </ScrollDown>
   </Container>
 );
 

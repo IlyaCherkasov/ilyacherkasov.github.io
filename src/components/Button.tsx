@@ -8,7 +8,10 @@ const Button = styled.a`
   border: 1px solid ${({ theme }) => theme.colors.primary};
   border-radius: 0.4rem;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition:
+    color 0.3s ease-in-out,
+    background 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
 
   :hover,
   :focus {
