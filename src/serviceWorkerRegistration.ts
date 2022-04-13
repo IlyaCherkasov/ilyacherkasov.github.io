@@ -24,15 +24,17 @@ function registerValidSW(swUrl: string, config?: Config) {
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
-              registration.showNotification(
-                'New content is available and will be used when all tabs for this page are closed. See https://cra.link/PWA.',
+              // eslint-disable-next-line no-console
+              console.log(
+                'New content is available and will be used when all tabs for this page are closed.',
               );
 
               if (config && config.onUpdate) {
                 config.onUpdate(registration);
               }
             } else {
-              registration.showNotification('Content is cached for offline use.');
+              // eslint-disable-next-line no-console
+              console.log('Content is cached for offline use.');
 
               if (config && config.onSuccess) {
                 config.onSuccess(registration);
