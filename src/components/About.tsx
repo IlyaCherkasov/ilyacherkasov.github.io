@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import Section from 'components/Section';
 import Img from 'assets/about.jpeg';
 import { ReactComponent as MedalSvg } from 'assets/medal.svg';
@@ -23,7 +24,7 @@ const Container = styled.div`
   }
 `;
 
-const ImageContainer = styled.div`
+const ImageContainer = styled(motion.div)`
   width: 80%;
   aspect-ratio: 1;
   margin: auto;
@@ -32,16 +33,10 @@ const ImageContainer = styled.div`
 
   img {
     border-radius: 2rem;
-    transform: rotate(10deg);
-    transition: transform 0.3s ease-in-out;
-
-    :hover {
-      transform: rotate(0);
-    }
   }
 `;
 
-const ContentContainer = styled.div`
+const ContentContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -70,10 +65,40 @@ const About = () => {
   return (
     <Section id="about" header="About Me" subheader="Get To Know">
       <Container>
-        <ImageContainer>
-          <img src={Img} alt="" />
+        <ImageContainer
+          variants={{
+            hidden: { x: -100, opacity: 0 },
+            visible: { x: 0, opacity: 1 },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
+          <motion.img
+            src={Img}
+            alt=""
+            variants={{
+              normal: { rotate: 0 },
+              tilted: { rotate: 10, transition: { duration: 1, delay: 1 } },
+            }}
+            initial="normal"
+            whileInView="tilted"
+            viewport={{ once: true }}
+            whileHover="normal"
+            whileTap="normal"
+          />
         </ImageContainer>
-        <ContentContainer>
+        <ContentContainer
+          variants={{
+            hidden: { x: 100, opacity: 0 },
+            visible: { x: 0, opacity: 1 },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+        >
           <Tiles>
             <Tile name="Experience" description={`${workYears}+ Years Working`}><MedalSvg /></Tile>
             <Tile name="People" description="No Angry Teams"><UserSvg /></Tile>

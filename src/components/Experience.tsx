@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import Section from 'components/Section';
-import SkillItem from './SkillItem';
+import SkillItem from 'components/SkillItem';
 
 const Container = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ const Container = styled.div`
   gap: 2rem;
 `;
 
-const DevelopmentBlock = styled.div`
+const DevelopmentBlock = styled(motion.div)`
   flex: 1;
   padding: 2rem 4rem;
   color: ${({ theme }) => theme.colors.white};
@@ -16,10 +17,6 @@ const DevelopmentBlock = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.purple}90;
   border-radius: 2rem;
   transition: background-color 0.3s ease-in-out;
-
-  :hover {
-    background: none;
-  }
 
   h3 {
     color: ${({ theme }) => theme.colors.brightLilac};
@@ -58,8 +55,19 @@ const skills: Record<string, Array<Record<string, string>>> = {
 const Experience = () => (
   <Section id="experience" header="My Experience" subheader="What Skills I Have">
     <Container>
-      {Object.keys(skills).map((skill) => (
-        <DevelopmentBlock key={skill}>
+      {Object.keys(skills).map((skill, index) => (
+        <DevelopmentBlock
+          key={skill}
+          variants={{
+            hidden: { x: (index ? 100 : -100), opacity: 0 },
+            visible: { x: 0, opacity: 1, transition: { duration: 1 } },
+          }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 1.05 }}
+        >
           <h3>
             {skill}
             {' '}

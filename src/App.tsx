@@ -70,6 +70,7 @@ const Container = styled.div`
   margin: auto;
   padding-bottom: 10rem;
   text-align: center;
+  overflow: hidden;
 `;
 
 const App = () => {

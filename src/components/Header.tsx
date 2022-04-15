@@ -109,7 +109,7 @@ const Header = () => (
     <Greetings
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.5, default: { duration: 1 } }}
+      transition={{ delay: 0.5, duration: 1 }}
     >
       Hello, I&apos;m
     </Greetings>
@@ -134,27 +134,27 @@ const Header = () => (
         downloadFileName="Ilya Cherkasov CV"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 1.2, default: { duration: 1 } }}
+        transition={{ delay: 1.2, duration: 1 }}
       />
       <MPrimaryButton
         name="Let's talk"
         link="#contact"
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 1.2, default: { duration: 1 } }}
+        transition={{ delay: 1.2, duration: 1 }}
       />
     </CtaButtons>
     <Me
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ default: { duration: 1 } }}
+      transition={{ duration: 1 }}
     >
       <img src={MePng} alt="me" />
     </Me>
     <Socials
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      transition={{ default: { duration: 1 } }}
+      transition={{ duration: 1 }}
     >
       {socialLinks.map((social) => (
         <a
@@ -171,7 +171,7 @@ const Header = () => (
       href="#contact"
       initial={{ x: 80, opacity: 0, rotate: '90deg' }}
       animate={{ x: 30, opacity: 1, rotate: '90deg' }}
-      transition={{ default: { duration: 1 } }}
+      transition={{ duration: 1 }}
     >
       Scroll Down
     </ScrollDown>

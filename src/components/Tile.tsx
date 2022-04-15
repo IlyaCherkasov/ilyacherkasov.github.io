@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -14,10 +15,6 @@ const Container = styled.div`
 
   svg {
     fill: ${({ theme }) => theme.colors.brightLilac};
-  }
-
-  :hover {
-    background: none;
   }
 `;
 
@@ -37,7 +34,10 @@ interface Props {
 }
 
 const Tile = ({ name, description, children }: Props) => (
-  <Container>
+  <Container
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 1.1 }}
+  >
     {children}
     <Name>
       {name}
