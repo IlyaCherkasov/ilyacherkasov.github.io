@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import Section from 'components/Section';
 import PuncherImg from 'assets/puncher.jpeg';
 import RdgaImg from 'assets/rdga.jpeg';
 import RpsImg from 'assets/rps.jpeg';
 import DemotivatorImg from 'assets/generator.jpeg';
-import OutlineButton from './OutlineButton';
-import PrimaryButton from './PrimaryButton';
+import OutlineButton from 'components/OutlineButton';
+import PrimaryButton from 'components/PrimaryButton';
 
 const Container = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ const Container = styled.div`
   gap: 2rem;
 `;
 
-const Tile = styled.div`
+const Tile = styled(motion.div)`
   display: flex;
   flex: 1;
   flex-basis: 40%;
@@ -26,11 +27,6 @@ const Tile = styled.div`
   background-color: ${({ theme }) => theme.colors.purple}90;
   border: 1px solid ${({ theme }) => theme.colors.purple}90;
   border-radius: 2rem;
-  transition: background-color 0.3s ease-in-out;
-
-  :hover {
-    background: none;
-  }
 
   h4 {
     width: 100%;
@@ -86,8 +82,20 @@ const portfolio = [
 const Portfolio = () => (
   <Section id="portfolio" header="Portfolio" subheader="My Recent Work">
     <Container>
-      {portfolio.map((item) => (
-        <Tile key={item.title}>
+      {portfolio.map((item, index) => (
+        <Tile
+          key={item.title}
+          variants={{
+            hidden: { x: index % 2 === 0 ? -100 : 100, opacity: 0 },
+            show: { x: 0, opacity: 1, transition: { duration: 1 } },
+            hover: { scale: 1.05 },
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          whileHover="hover"
+          whileTap="hover"
+        >
           <Image img={item.image} />
           <h4>
             {item.title}

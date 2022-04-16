@@ -25,6 +25,4 @@ PrimaryButton.defaultProps = {
   target: '_self',
 };
 
-export default PrimaryButton;
-
-export const MPrimaryButton = motion(PrimaryButton);
+export default motion(PrimaryButton);

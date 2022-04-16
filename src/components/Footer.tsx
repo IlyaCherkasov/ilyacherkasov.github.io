@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import navigation from 'helpers/navigation';
 import socialLinks from 'helpers/socialLinks';
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -68,24 +69,43 @@ const extendedNavigation = [
 ];
 
 const Footer = () => (
-  <Container>
+  <Container
+    variants={{
+      hidden: { y: 100, opacity: 0 },
+      show: { y: 0, opacity: 1, transition: { duration: 1 } },
+    }}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true }}
+  >
     <h2>CHERKASIK</h2>
     <Nav>
       {extendedNavigation.map((item) => (
-        <a href={`#${item.name}`} key={item.name}>{item.title}</a>
+        <motion.a
+          href={`#${item.name}`}
+          key={item.name}
+          variants={{ hover: { scale: 1.5 } }}
+          whileHover="hover"
+          whileTap="hover"
+        >
+          {item.title}
+        </motion.a>
       ))}
     </Nav>
     <SocialLinks>
       {socialLinks.map((link) => (
-        <a
+        <motion.a
           key={link.label}
           href={link.url}
           title={link.label}
           target="_blank"
           rel="noreferrer"
+          variants={{ hover: { scale: 1.5 } }}
+          whileHover="hover"
+          whileTap="hover"
         >
           {link.icon}
-        </a>
+        </motion.a>
       ))}
     </SocialLinks>
     ©Ilya Cherkasov

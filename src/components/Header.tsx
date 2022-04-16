@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { MOutlineButton } from 'components/OutlineButton';
-import { MPrimaryButton } from 'components/PrimaryButton';
+import PrimaryButton from 'components/PrimaryButton';
 import socialLinks from 'helpers/socialLinks';
 import useCv from 'helpers/useCv';
 import MePng from 'assets/main.png';
@@ -132,16 +132,28 @@ const Header = () => (
         name="Download CV"
         link={useCv()}
         downloadFileName="Ilya Cherkasov CV"
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
+        variants={{
+          hidden: { x: -100, opacity: 0 },
+          show: { x: 0, opacity: 1, transition: { delay: 1.2, duration: 1 } },
+          hover: { scale: 1.2 },
+        }}
+        initial="hidden"
+        animate="show"
+        whileHover="hover"
+        whileTap="hover"
       />
-      <MPrimaryButton
+      <PrimaryButton
         name="Let's talk"
         link="#contact"
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
+        variants={{
+          hidden: { x: 100, opacity: 0 },
+          show: { x: 0, opacity: 1, transition: { delay: 1.2, duration: 1 } },
+          hover: { scale: 1.2 },
+        }}
+        initial="hidden"
+        animate="show"
+        whileHover="hover"
+        whileTap="hover"
       />
     </CtaButtons>
     <Me
@@ -157,21 +169,32 @@ const Header = () => (
       transition={{ duration: 1 }}
     >
       {socialLinks.map((social) => (
-        <a
+        <motion.a
           href={social.url}
           target="_blank"
           rel="noreferrer"
           key={social.label}
+          variants={{ hover: { scale: 1.5 } }}
+          whileHover="hover"
+          whileTap="hover"
         >
           {social.icon}
-        </a>
+        </motion.a>
       ))}
     </Socials>
     <ScrollDown
       href="#contact"
-      initial={{ x: 80, opacity: 0, rotate: '90deg' }}
-      animate={{ x: 30, opacity: 1, rotate: '90deg' }}
-      transition={{ duration: 1 }}
+      variants={{
+        hidden: { x: 80, opacity: 0, rotate: '90deg' },
+        appear: {
+          x: 30, opacity: 1, rotate: '90deg', transition: { duration: 1 },
+        },
+        hover: { scale: 1.5 },
+      }}
+      initial="hidden"
+      animate="appear"
+      whileHover="hover"
+      whileTap="hover"
     >
       Scroll Down
     </ScrollDown>

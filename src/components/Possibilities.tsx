@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import Section from 'components/Section';
 import { ReactComponent as CheckSvg } from 'assets/simple-check.svg';
 
@@ -8,7 +9,7 @@ const Container = styled.div`
   gap: 3rem;
 `;
 
-const Possibility = styled.div`
+const Possibility = styled(motion.div)`
   display: flex;
   flex: 1;
   flex-flow: column nowrap;
@@ -17,7 +18,6 @@ const Possibility = styled.div`
   background: ${({ theme }) => theme.colors.purple}90;
   border: 1px solid ${({ theme }) => theme.colors.purple}90;
   border-radius: 0 0 2rem 2rem;
-  transition: background 0.3s ease-in-out;
 
   ul {
     display: flex;
@@ -38,10 +38,6 @@ const Possibility = styled.div`
   svg {
     margin: 0.4rem 1rem 0 0;
     fill: ${({ theme }) => theme.colors.primary};
-  }
-
-  :hover {
-    background: none;
   }
 `;
 
@@ -79,7 +75,19 @@ const Possibilities = () => (
   <Section id="possibilities" header="Services" subheader="What I Can Do For You">
     <Container>
       {Object.keys(possibilities).map((possibility) => (
-        <Possibility key={possibility}>
+        <Possibility
+          key={possibility}
+          variants={{
+            hidden: { y: 100, opacity: 0 },
+            show: { y: 0, opacity: 1, transition: { duration: 1 } },
+            hover: { scale: 1.1 },
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          whileHover="hover"
+          whileTap="hover"
+        >
           <Header>{possibility}</Header>
           <ul>
             {possibilities[possibility].map((item) => (

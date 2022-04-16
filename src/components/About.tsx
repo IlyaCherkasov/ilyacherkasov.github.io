@@ -111,7 +111,20 @@ const About = () => {
           because my hobby is disc-golf and programming of course. Also my hobbies are intertwined
           into development site for Russian Disc-Golf Association to evolve disc-golf into
           something more than hobby for all professional players.
-          <PrimaryButton name="Let's talk" link="#contact" />
+          <PrimaryButton
+            name="Let's talk"
+            link="#contact"
+            variants={{
+              hidden: { y: 100, opacity: 0 },
+              show: { y: 0, opacity: 1, transition: { duration: 1 } },
+              hover: { scale: 1.2 },
+            }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            whileHover="hover"
+            whileTap="hover"
+          />
         </ContentContainer>
       </Container>
     </Section>

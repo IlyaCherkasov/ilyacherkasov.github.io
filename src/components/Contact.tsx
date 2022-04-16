@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 import Section from 'components/Section';
 import { ReactComponent as EmailSvg } from 'assets/email.svg';
 import { ReactComponent as PhoneSvg } from 'assets/phone.svg';
 import { ReactComponent as TelegramSvg } from 'assets/telegram.svg';
-import PrimaryButton from './PrimaryButton';
+import PrimaryButton from 'components/PrimaryButton';
 
 const Container = styled.div`
   display: flex;
@@ -21,7 +22,7 @@ const ContactButtons = styled.div`
   margin: auto;
 `;
 
-const ContactTile = styled.div`
+const ContactTile = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -30,11 +31,6 @@ const ContactTile = styled.div`
   background-color: ${({ theme }) => theme.colors.purple}90;
   border: 1px solid ${({ theme }) => theme.colors.purple}90;
   border-radius: 1rem;
-  transition: background 0.3s ease-in-out;
-
-  :hover {
-    background: none;
-  }
 `;
 
 const TileText = styled.div`
@@ -70,11 +66,11 @@ const InputStyles = css`
   border-radius: 1rem;
 `;
 
-const Input = styled.input`
+const Input = styled(motion.input)`
   ${InputStyles}
 `;
 
-const TextArea = styled.textarea`
+const TextArea = styled(motion.textarea)`
   ${InputStyles}
 `;
 
@@ -110,7 +106,19 @@ const Contact = () => {
       <Container>
         <ContactButtons>
           {contactData.map((contact) => (
-            <ContactTile key={contact.name}>
+            <ContactTile
+              key={contact.name}
+              variants={{
+                hidden: { x: -100, opacity: 0 },
+                show: { x: 0, opacity: 1, transition: { duration: 1 } },
+                hover: { scale: 1.2 },
+              }}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              whileHover="hover"
+              whileTap="hover"
+            >
               {contact.icon}
               <TileText>
                 <h4>{contact.name}</h4>
@@ -127,14 +135,45 @@ const Contact = () => {
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
             placeholder="Enter subject of your message"
+            variants={{
+              hidden: { x: 100, opacity: 0 },
+              show: { x: 0, opacity: 1, transition: { duration: 1 } },
+              focus: { scale: 1.1 },
+            }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            whileFocus="focus"
           />
           <TextArea
             value={body}
             onChange={(e) => setBody(e.target.value)}
             placeholder="Enter your message"
             rows={5}
+            variants={{
+              hidden: { x: 100, opacity: 0 },
+              show: { x: 0, opacity: 1, transition: { duration: 1 } },
+              focus: { scale: 1.1 },
+            }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            whileFocus="focus"
           />
-          <PrimaryButton name="Send email" link={`mailto:ilyakopeysk@gmail.com?subject=${subject}&body=${body}`} />
+          <PrimaryButton
+            name="Send email"
+            link={`mailto:ilyakopeysk@gmail.com?subject=${subject}&body=${body}`}
+            variants={{
+              hidden: { y: 100, opacity: 0 },
+              show: { y: 0, opacity: 1, transition: { duration: 1 } },
+              hover: { scale: 1.2 },
+            }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            whileHover="hover"
+            whileTap="hover"
+          />
         </Form>
       </Container>
     </Section>
