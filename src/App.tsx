@@ -11,6 +11,7 @@ import Portfolio from 'components/Portfolio';
 import Companies from 'components/Companies';
 import Contact from 'components/Contact';
 import Footer from 'components/Footer';
+import Notification from 'components/Notification';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -104,6 +105,7 @@ const App = () => {
         <Portfolio />
         <Contact />
       </Container>
+      <Notification />
       <Footer />
     </ThemeProvider>
   );

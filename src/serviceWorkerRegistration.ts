@@ -28,6 +28,12 @@ function registerValidSW(swUrl: string, config?: Config) {
               console.log(
                 'New content is available and will be used when all tabs for this page are closed.',
               );
+              const notification = document.getElementById('reloadNotification');
+              if (notification) {
+                notification.style.top = '1.5rem';
+                notification.style.opacity = '1';
+              }
+              installingWorker.postMessage('skipWaiting');
 
               if (config && config.onUpdate) {
                 config.onUpdate(registration);
