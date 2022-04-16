@@ -38,7 +38,7 @@ const skills: Record<string, Array<Record<string, string>>> = {
   Frontend: [
     { name: 'HTML', level: 'Experienced' },
     { name: 'CSS', level: 'Experienced' },
-    { name: 'JavaScrypt', level: 'Experienced' },
+    { name: 'JavaScript', level: 'Experienced' },
     { name: 'TypeScript', level: 'Experienced' },
     { name: 'React', level: 'Experienced' },
     { name: 'Redux', level: 'Experienced' },
