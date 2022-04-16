@@ -81,7 +81,7 @@ const App = () => {
     const sections = document.querySelectorAll('section');
     let newActiveSection = '';
     sections.forEach((section) => {
-      if (window.scrollY + 10 >= section.offsetTop) {
+      if (window.scrollY + 50 >= section.offsetTop) {
         newActiveSection = section.getAttribute('id') || '';
       }
     });
