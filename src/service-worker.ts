@@ -33,7 +33,7 @@ registerRoute(
 );
 
 self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'skipWaiting') {
+  if (event.data === 'skipWaiting') {
     return self.skipWaiting();
   }
 });

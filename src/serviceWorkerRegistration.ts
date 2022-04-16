@@ -24,10 +24,6 @@ function registerValidSW(swUrl: string, config?: Config) {
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
-              // eslint-disable-next-line no-console
-              console.log(
-                'New content is available and will be used when all tabs for this page are closed.',
-              );
               const notification = document.getElementById('reloadNotification');
               if (notification) {
                 notification.style.top = '1.5rem';
