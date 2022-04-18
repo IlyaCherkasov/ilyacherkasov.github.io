@@ -70,7 +70,7 @@ const Navigation = ({ activeSection }: Props) => (
   >
     <Bubble
       initial={{ x: 0 }}
-      animate={{ x: positions[activeSection], transition: { duration: 0.5 } }}
+      animate={{ x: positions[activeSection] }}
     />
     {navigation.map((item) => (
       <NavItem
