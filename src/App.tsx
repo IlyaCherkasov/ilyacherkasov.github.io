@@ -1,17 +1,18 @@
-import { useState, useEffect } from 'react';
-import styled, { createGlobalStyle, ThemeProvider } from 'styled-components';
-import theme from 'helpers/theme';
-import BackgroundAsset from 'assets/bg-texture.png';
-import Header from 'components/Header';
-import Navigation from 'components/Navigation';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+import { useEffect, useState } from 'react';
+
 import About from 'components/About';
-import Experience from 'components/Experience';
-import Possibilities from 'components/Possibilities';
-import Portfolio from 'components/Portfolio';
+import BackgroundAsset from 'assets/bg-texture.png';
 import Companies from 'components/Companies';
 import Contact from 'components/Contact';
+import Experience from 'components/Experience';
 import Footer from 'components/Footer';
+import Header from 'components/Header';
+import Navigation from 'components/Navigation';
 import Notification from 'components/Notification';
+import Portfolio from 'components/Portfolio';
+import Possibilities from 'components/Possibilities';
+import theme from 'helpers/theme';
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -70,8 +71,8 @@ const Container = styled.div`
   max-width: ${({ theme }) => theme.breakpoints.desktop}px;
   margin: auto;
   padding-bottom: 10rem;
-  text-align: center;
   overflow: hidden;
+  text-align: center;
 `;
 
 const App = () => {

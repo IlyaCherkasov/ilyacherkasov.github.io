@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
 const Container = styled(motion.div)`
   position: fixed;
@@ -18,9 +18,9 @@ const Container = styled(motion.div)`
   background: ${({ theme }) => theme.colors.brightLilac};
   border-radius: 2rem;
   transform: translateX(-50%);
-  transition: all 1s ease-in-out;
   opacity: 0;
-  
+  transition: all 1s ease-in-out;
+
   [open] {
     top: 1.5rem;
     opacity: 1;

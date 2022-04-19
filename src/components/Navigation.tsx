@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import navigation from 'helpers/navigation';
 import { motion } from 'framer-motion';
+import navigation from 'helpers/navigation';
+import styled from 'styled-components';
 import theme from '../helpers/theme';
 
 const NavBar = styled(motion.nav)`
@@ -11,8 +11,8 @@ const NavBar = styled(motion.nav)`
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  max-width: 14.5rem;
   align-items: center;
+  max-width: 14.5rem;
   padding: 0.5rem 1.5rem;
   background: ${({ theme }) => theme.colors.black}55;
   border-radius: 100vh;
@@ -26,13 +26,13 @@ const NavBar = styled(motion.nav)`
 `;
 
 const NavItem = styled.a<{active?: boolean}>`
+  z-index: 1;
   display: flex;
   height: 1rem;
   aspect-ratio: 1;
   padding: 0.55rem;
   color: ${({ theme }) => theme.colors.brightLilac};
   border-radius: 100vh;
-  z-index: 1;
 `;
 
 const Bubble = styled(motion.div)`
