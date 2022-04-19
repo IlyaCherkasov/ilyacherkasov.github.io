@@ -20,11 +20,6 @@ const Container = styled(motion.div)`
   transform: translateX(-50%);
   opacity: 0;
   transition: all 1s ease-in-out;
-
-  [open] {
-    top: 1.5rem;
-    opacity: 1;
-  }
 `;
 
 const Notification = () => (
