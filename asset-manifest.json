@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/static/js/main.9bc44458.js",
-    "static/media/main.png": "/static/media/main.d25e11b356ca64f730e1.png",
-    "static/media/about.jpeg": "/static/media/about.58ca54ce993cab0a0971.jpeg",
-    "static/media/rdga.jpeg": "/static/media/rdga.356dc83d7d695b4b9e43.jpeg",
-    "static/media/generator.jpeg": "/static/media/generator.4f6691a96bba5c69496c.jpeg",
-    "static/media/rps.jpeg": "/static/media/rps.05eaa954e51b0ec82c41.jpeg",
+    "main.js": "/static/js/main.2cebb4c9.js",
     "static/media/cv_ru.pdf": "/static/media/cv_ru.9b8fd9fd7b245d14fb91.pdf",
     "static/media/cv_en.pdf": "/static/media/cv_en.4a5c5abc23bfdaf3f1a6.pdf",
-    "static/media/puncher.jpeg": "/static/media/puncher.a99bed1ddd46c33d8367.jpeg",
+    "static/media/main.webp": "/static/media/main.72489dcb5fba4c783616.webp",
+    "static/media/rdga.webp": "/static/media/rdga.bf4d4266d556bd639c93.webp",
     "service-worker.js": "/service-worker.js",
+    "static/media/about.webp": "/static/media/about.51782b063ae3e8e6e067.webp",
+    "static/media/rps.webp": "/static/media/rps.c8ff24fe21dd3e034927.webp",
+    "static/media/generator.webp": "/static/media/generator.07c0e79f6b92b5e9af92.webp",
+    "static/media/puncher.webp": "/static/media/puncher.adee2c925514f6052038.webp",
     "static/media/itransition.svg": "/static/media/itransition.5e87503026d31c18f1f0f6096c06fb9c.svg",
     "static/media/kanda.svg": "/static/media/kanda.96df2ad341a5f647f1a99af435585377.svg",
     "static/media/puncher.svg": "/static/media/puncher.ac8d7cbe42d37a69c9961a5889cb3008.svg",
@@ -30,9 +30,10 @@
     "static/media/home.svg": "/static/media/home.654410f382b47b0a299544ce07672e52.svg",
     "static/media/simple-check.svg": "/static/media/simple-check.85f7025750b3dcb192b14310d1676816.svg",
     "static/media/email.svg": "/static/media/email.3432ce3dc9fa31a0146cee31d74e53f4.svg",
-    "main.9bc44458.js.map": "/static/js/main.9bc44458.js.map"
+    "static/media/bg-texture.webp": "/static/media/bg-texture.004847cf4546ff20a2d1.webp",
+    "main.2cebb4c9.js.map": "/static/js/main.2cebb4c9.js.map"
   },
   "entrypoints": [
-    "static/js/main.9bc44458.js"
+    "static/js/main.2cebb4c9.js"
   ]
 }
