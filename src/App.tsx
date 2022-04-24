@@ -2,7 +2,7 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { useEffect, useState } from 'react';
 
 import About from 'components/About';
-import BackgroundAsset from 'assets/bg-texture.png';
+import BackgroundAsset from 'assets/bg-texture.webp';
 import Companies from 'components/Companies';
 import Contact from 'components/Contact';
 import Experience from 'components/Experience';

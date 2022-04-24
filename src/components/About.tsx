@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Section from 'components/Section';
-import Img from 'assets/about.jpeg';
+import Img from 'assets/about.webp';
 import { ReactComponent as MedalSvg } from 'assets/medal.svg';
 import { ReactComponent as UserSvg } from 'assets/users.svg';
 import { ReactComponent as ProjectsSvg } from 'assets/projects.svg';

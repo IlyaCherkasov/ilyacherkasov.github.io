@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import Section from 'components/Section';
-import PuncherImg from 'assets/puncher.jpeg';
-import RdgaImg from 'assets/rdga.jpeg';
-import RpsImg from 'assets/rps.jpeg';
-import DemotivatorImg from 'assets/generator.jpeg';
+import PuncherImg from 'assets/puncher.webp';
+import RdgaImg from 'assets/rdga.webp';
+import RpsImg from 'assets/rps.webp';
+import DemotivatorImg from 'assets/generator.webp';
 import OutlineButton from 'components/OutlineButton';
 import PrimaryButton from 'components/PrimaryButton';
 

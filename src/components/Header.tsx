@@ -4,7 +4,7 @@ import { MOutlineButton } from 'components/OutlineButton';
 import PrimaryButton from 'components/PrimaryButton';
 import socialLinks from 'helpers/socialLinks';
 import useCv from 'helpers/useCv';
-import MePng from 'assets/main.png';
+import MeImg from 'assets/main.webp';
 
 const Container = styled.header`
   position: relative;
@@ -161,7 +161,7 @@ const Header = () => (
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <img src={MePng} alt="me" />
+      <img src={MeImg} alt="me" />
     </Me>
     <Socials
       initial={{ x: -50, opacity: 0 }}
