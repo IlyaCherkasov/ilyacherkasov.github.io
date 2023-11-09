@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
 
 const StyledSection = styled.section`
   width: calc(100% - 2rem);

@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import styled, { css } from 'styled-components';
+
 import { motion } from 'framer-motion';
-import Section from 'components/Section';
+import styled, { css } from 'styled-components';
+
 import { ReactComponent as EmailSvg } from 'assets/email.svg';
 import { ReactComponent as PhoneSvg } from 'assets/phone.svg';
 import { ReactComponent as TelegramSvg } from 'assets/telegram.svg';
 import PrimaryButton from 'components/PrimaryButton';
+import Section from 'components/Section';
 
 const Container = styled.div`
   display: flex;
@@ -102,7 +104,7 @@ const Contact = () => {
   const [subject, setSubject] = useState('');
   const [body, setBody] = useState('');
   return (
-    <Section id="contact" header="Contact Me" subheader="Get In Touch">
+    <Section id='contact' header='Contact Me' subheader='Get In Touch'>
       <Container>
         <ContactButtons>
           {contactData.map((contact) => (
@@ -113,18 +115,18 @@ const Contact = () => {
                 show: { x: 0, opacity: 1, transition: { duration: 1 } },
                 hover: { scale: 1.2 },
               }}
-              initial="hidden"
-              whileInView="show"
+              initial='hidden'
+              whileInView='show'
               viewport={{ once: true }}
-              whileHover="hover"
-              whileTap="hover"
+              whileHover='hover'
+              whileTap='hover'
             >
               {contact.icon}
               <TileText>
                 <h4>{contact.name}</h4>
                 {contact.nickname}
               </TileText>
-              <a href={contact.link} target="_blank" rel="noreferrer">
+              <a href={contact.link} target='_blank' rel='noreferrer'>
                 {contact.cta}
               </a>
             </ContactTile>
@@ -134,45 +136,45 @@ const Contact = () => {
           <Input
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
-            placeholder="Enter subject of your message"
+            placeholder='Enter subject of your message'
             variants={{
               hidden: { x: 100, opacity: 0 },
               show: { x: 0, opacity: 1, transition: { duration: 1 } },
               focus: { scale: 1.1 },
             }}
-            initial="hidden"
-            whileInView="show"
+            initial='hidden'
+            whileInView='show'
             viewport={{ once: true }}
-            whileFocus="focus"
+            whileFocus='focus'
           />
           <TextArea
             value={body}
             onChange={(e) => setBody(e.target.value)}
-            placeholder="Enter your message"
+            placeholder='Enter your message'
             rows={5}
             variants={{
               hidden: { x: 100, opacity: 0 },
               show: { x: 0, opacity: 1, transition: { duration: 1 } },
               focus: { scale: 1.1 },
             }}
-            initial="hidden"
-            whileInView="show"
+            initial='hidden'
+            whileInView='show'
             viewport={{ once: true }}
-            whileFocus="focus"
+            whileFocus='focus'
           />
           <PrimaryButton
-            name="Send email"
+            name='Send email'
             link={`mailto:ilyakopeysk@gmail.com?subject=${subject}&body=${body}`}
             variants={{
               hidden: { y: 100, opacity: 0 },
               show: { y: 0, opacity: 1, transition: { duration: 1 } },
               hover: { scale: 1.2 },
             }}
-            initial="hidden"
-            whileInView="show"
+            initial='hidden'
+            whileInView='show'
             viewport={{ once: true }}
-            whileHover="hover"
-            whileTap="hover"
+            whileHover='hover'
+            whileTap='hover'
           />
         </Form>
       </Container>

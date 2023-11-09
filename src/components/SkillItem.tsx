@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { ReactComponent as CheckSvg } from 'assets/check.svg';
 
 const Container = styled.div`

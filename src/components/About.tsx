@@ -1,11 +1,12 @@
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import Section from 'components/Section';
+import styled from 'styled-components';
+
 import Img from 'assets/about.webp';
 import { ReactComponent as MedalSvg } from 'assets/medal.svg';
-import { ReactComponent as UserSvg } from 'assets/users.svg';
 import { ReactComponent as ProjectsSvg } from 'assets/projects.svg';
+import { ReactComponent as UserSvg } from 'assets/users.svg';
 import PrimaryButton from 'components/PrimaryButton';
+import Section from 'components/Section';
 import Tile from 'components/Tile';
 import useWorkYears from 'helpers/useWorkYears';
 

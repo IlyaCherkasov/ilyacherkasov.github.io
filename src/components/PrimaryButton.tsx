@@ -1,6 +1,8 @@
 import { forwardRef, ForwardedRef } from 'react';
-import styled from 'styled-components';
+
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
+
 import Button from 'components/Button';
 
 const LinkButton = styled(Button)`

@@ -1,9 +1,10 @@
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
+
 import navigation from 'helpers/navigation';
 import socialLinks from 'helpers/socialLinks';
 
-const Container = styled(motion.div)`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -69,15 +70,7 @@ const extendedNavigation = [
 ];
 
 const Footer = () => (
-  <Container
-    variants={{
-      hidden: { y: 100, opacity: 0 },
-      show: { y: 0, opacity: 1, transition: { duration: 1 } },
-    }}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true }}
-  >
+  <Container>
     <h2>CHERKASIK</h2>
     <Nav>
       {extendedNavigation.map((item) => (
@@ -85,8 +78,8 @@ const Footer = () => (
           href={`#${item.name}`}
           key={item.name}
           variants={{ hover: { scale: 1.5 } }}
-          whileHover="hover"
-          whileTap="hover"
+          whileHover='hover'
+          whileTap='hover'
         >
           {item.title}
         </motion.a>
@@ -98,11 +91,11 @@ const Footer = () => (
           key={link.label}
           href={link.url}
           title={link.label}
-          target="_blank"
-          rel="noreferrer"
+          target='_blank'
+          rel='noreferrer'
           variants={{ hover: { scale: 1.5 } }}
-          whileHover="hover"
-          whileTap="hover"
+          whileHover='hover'
+          whileTap='hover'
         >
           {link.icon}
         </motion.a>
