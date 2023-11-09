@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
-import navigation from 'helpers/navigation';
 import styled from 'styled-components';
+
+import navigation from 'helpers/navigation';
+
 import theme from '../helpers/theme';
 
 const NavBar = styled(motion.nav)`
@@ -25,7 +27,7 @@ const NavBar = styled(motion.nav)`
   }
 `;
 
-const NavItem = styled.a<{active?: boolean}>`
+const NavItem = styled.a<{ active?: boolean }>`
   z-index: 1;
   display: flex;
   height: 1rem;
@@ -44,45 +46,46 @@ const Bubble = styled(motion.div)`
 `;
 
 interface Props {
-  activeSection: string,
+  activeSection: string;
 }
 
-const difference = window.innerWidth > theme.breakpoints.mobile ? 62 : 52;
-const positions: Record<string, number> = {
-  home: 0,
-  about: difference,
-  experience: difference * 2,
-  companies: difference * 2,
-  possibilities: difference * 3,
-  portfolio: difference * 3,
-  contact: difference * 4,
-};
+const Navigation = ({ activeSection }: Props) => {
+  const difference = window.innerWidth > theme.breakpoints.mobile ? 62 : 52;
+  const positions: Record<string, number> = {
+    home: 0,
+    about: difference,
+    experience: difference * 2,
+    companies: difference * 2,
+    possibilities: difference * 3,
+    portfolio: difference * 3,
+    contact: difference * 4,
+  };
 
-const Navigation = ({ activeSection }: Props) => (
-  <NavBar
-    initial={{ y: 100, opacity: 0, x: '-50%' }}
-    animate={{
-      y: 0,
-      opacity: 1,
-      x: '-50%',
-      transition: { delay: 0.5, duration: 1 },
-    }}
-  >
-    <Bubble
-      initial={{ x: 0 }}
-      animate={{ x: positions[activeSection] }}
-    />
-    {navigation.map((item) => (
-      <NavItem
-        href={`#${item.name}`}
-        title={item.title}
-        key={item.title}
-        active={activeSection === item.name || activeSection === item.additional}
-      >
-        {item.icon}
-      </NavItem>
-    ))}
-  </NavBar>
-);
+  return (
+    <NavBar
+      initial={{ y: 100, opacity: 0, x: '-50%' }}
+      animate={{
+        y: 0,
+        opacity: 1,
+        x: '-50%',
+        transition: { delay: 0.5, duration: 1 },
+      }}
+    >
+      <Bubble initial={{ x: 0 }} animate={{ x: positions[activeSection] }} />
+      {navigation.map((item) => (
+        <NavItem
+          href={`#${item.name}`}
+          title={item.title}
+          key={item.title}
+          active={
+            activeSection === item.name || activeSection === item.additional
+          }
+        >
+          {item.icon}
+        </NavItem>
+      ))}
+    </NavBar>
+  );
+};
 
 export default Navigation;

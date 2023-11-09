@@ -28,7 +28,12 @@ const ImageContainer = styled(motion.div)`
   width: 80%;
   aspect-ratio: 1;
   margin: auto;
-  background: linear-gradient(45deg, transparent, ${({ theme }) => theme.colors.primary}, transparent);
+  background: linear-gradient(
+    45deg,
+    transparent,
+    ${({ theme }) => theme.colors.primary},
+    transparent
+  );
   border-radius: 2rem;
 
   img {
@@ -63,30 +68,30 @@ const About = () => {
   const workYears = useWorkYears();
 
   return (
-    <Section id="about" header="About Me" subheader="Get To Know">
+    <Section id='about' header='About Me' subheader='Get To Know'>
       <Container>
         <ImageContainer
           variants={{
             hidden: { x: -100, opacity: 0 },
             visible: { x: 0, opacity: 1 },
           }}
-          initial="hidden"
-          whileInView="visible"
+          initial='hidden'
+          whileInView='visible'
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
           <motion.img
             src={Img}
-            alt=""
+            alt=''
             variants={{
               normal: { rotate: 0 },
               tilted: { rotate: 10, transition: { duration: 1, delay: 1 } },
             }}
-            initial="normal"
-            whileInView="tilted"
+            initial='normal'
+            whileInView='tilted'
             viewport={{ once: true }}
-            whileHover="normal"
-            whileTap="normal"
+            whileHover='normal'
+            whileTap='normal'
           />
         </ImageContainer>
         <ContentContainer
@@ -94,36 +99,44 @@ const About = () => {
             hidden: { x: 100, opacity: 0 },
             visible: { x: 0, opacity: 1 },
           }}
-          initial="hidden"
-          whileInView="visible"
+          initial='hidden'
+          whileInView='visible'
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
           <Tiles>
-            <Tile name="Experience" description={`${workYears}+ Years Working`}><MedalSvg /></Tile>
-            <Tile name="People" description="No Angry Teams"><UserSvg /></Tile>
-            <Tile name="Projects" description="2 Launched"><ProjectsSvg /></Tile>
+            <Tile name='Experience' description={`${workYears}+ Years Working`}>
+              <MedalSvg />
+            </Tile>
+            <Tile name='Team' description='3-20 people'>
+              <UserSvg />
+            </Tile>
+            <Tile name='Projects' description='3 Commercial'>
+              <ProjectsSvg />
+            </Tile>
           </Tiles>
-          I&apos;m a graduate of ITMO University. My bachelor degree was in sphere of Information
-          Technologies and Programming at department of Information Systems.
-          Started my career in university with small startup where I developed myself as
-          a professional and a good teammate. In my spare time love to throw some discs
-          because my hobby is disc-golf and programming of course. Also my hobbies are intertwined
-          into development site for Russian Disc-Golf Association to evolve disc-golf into
-          something more than hobby for all professional players.
+          I&apos;m a graduate of ITMO University. My bachelor degree was in
+          sphere of Information Technologies and Programming at department of
+          Information Systems. Started my career in university with small
+          startup where I developed myself as a professional and a good
+          teammate. In my spare time love to throw some discs because my hobby
+          is disc-golf and programming of course. Also my hobbies are
+          intertwined into development site for Russian Disc-Golf Association to
+          evolve disc-golf into something more than hobby for all professional
+          players.
           <PrimaryButton
             name="Let's talk"
-            link="#contact"
+            link='#contact'
             variants={{
               hidden: { y: 100, opacity: 0 },
               show: { y: 0, opacity: 1, transition: { duration: 1 } },
               hover: { scale: 1.2 },
             }}
-            initial="hidden"
-            whileInView="show"
+            initial='hidden'
+            whileInView='show'
             viewport={{ once: true }}
-            whileHover="hover"
-            whileTap="hover"
+            whileHover='hover'
+            whileTap='hover'
           />
         </ContentContainer>
       </Container>

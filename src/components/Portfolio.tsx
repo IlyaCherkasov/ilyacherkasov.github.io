@@ -1,23 +1,26 @@
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import Section from 'components/Section';
+import styled from 'styled-components';
+
+import CascanaImg from 'assets/cascana.webp';
 import PuncherImg from 'assets/puncher.webp';
 import RdgaImg from 'assets/rdga.webp';
 import RpsImg from 'assets/rps.webp';
-import DemotivatorImg from 'assets/generator.webp';
 import OutlineButton from 'components/OutlineButton';
 import PrimaryButton from 'components/PrimaryButton';
+import Section from 'components/Section';
 
 const Container = styled.div`
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
+
+  ${({ theme }) => theme.media.mobile} {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Tile = styled(motion.div)`
   display: flex;
-  flex: 1;
-  flex-basis: 40%;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
@@ -40,7 +43,8 @@ const Image = styled.div<{ img: string }>`
   overflow: hidden;
   background: url(${(props) => props.img});
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
+  background-position: center;
   border-radius: 2rem;
 `;
 
@@ -55,9 +59,12 @@ const Buttons = styled.div`
 const portfolio = [
   {
     title: 'PuncherApp: loyalty programs for small business',
-    github: '',
-    demo: 'https://puncher.app',
     image: PuncherImg,
+  },
+  {
+    title: 'Cascana: Customer Engagement Center',
+    demo: 'https://cascana.ru',
+    image: CascanaImg,
   },
   {
     title: 'Russian Disc-Golf Association',
@@ -71,16 +78,10 @@ const portfolio = [
     demo: 'https://ilyacherkasov.github.io/RockPaperScissors/',
     image: RpsImg,
   },
-  {
-    title: 'Demotivator generator (JavaScript only)',
-    github: 'https://github.com/IlyaCherkasov/Generator',
-    demo: 'https://ilyacherkasov.github.io/Generator/',
-    image: DemotivatorImg,
-  },
 ];
 
 const Portfolio = () => (
-  <Section id="portfolio" header="Portfolio" subheader="My Recent Work">
+  <Section id='portfolio' header='Portfolio' subheader='My Recent Work'>
     <Container>
       {portfolio.map((item, index) => (
         <Tile
@@ -90,19 +91,28 @@ const Portfolio = () => (
             show: { x: 0, opacity: 1, transition: { duration: 1 } },
             hover: { scale: 1.05 },
           }}
-          initial="hidden"
-          whileInView="show"
+          initial='hidden'
+          whileInView='show'
           viewport={{ once: true }}
-          whileHover="hover"
-          whileTap="hover"
+          whileHover='hover'
+          whileTap='hover'
         >
           <Image img={item.image} />
-          <h4>
-            {item.title}
-          </h4>
+          <h4>{item.title}</h4>
           <Buttons>
-            {item.github && <OutlineButton name="GitHub" link={item.github} target="_blank" />}
-            <PrimaryButton name="Live Demo" link={item.demo} target="_blank" />
+            {item.github && (
+              <OutlineButton name='GitHub' link={item.github} target='_blank' />
+            )}
+            {item.demo && (
+              <PrimaryButton
+                name='Live Demo'
+                link={item.demo}
+                target='_blank'
+              />
+            )}
+            {!item.demo && !item.github && (
+              <h5>Application is not accessible :(</h5>
+            )}
           </Buttons>
         </Tile>
       ))}

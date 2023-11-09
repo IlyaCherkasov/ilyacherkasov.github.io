@@ -1,8 +1,9 @@
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { useEffect, useState } from 'react';
 
-import About from 'components/About';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
+
 import BackgroundAsset from 'assets/bg-texture.webp';
+import About from 'components/About';
 import Companies from 'components/Companies';
 import Contact from 'components/Contact';
 import Experience from 'components/Experience';
@@ -71,7 +72,6 @@ const Container = styled.div`
   max-width: ${({ theme }) => theme.breakpoints.desktop}px;
   margin: auto;
   padding-bottom: 10rem;
-  overflow: hidden;
   text-align: center;
 `;
 

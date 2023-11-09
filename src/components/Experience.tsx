@@ -1,5 +1,6 @@
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import styled from 'styled-components';
+
 import Section from 'components/Section';
 import SkillItem from 'components/SkillItem';
 
@@ -47,32 +48,32 @@ const skills: Record<string, Array<Record<string, string>>> = {
     { name: 'NodeJS', level: 'Intermediate' },
     { name: 'TypeScript', level: 'Intermediate' },
     { name: 'Express', level: 'Intermediate' },
-    { name: 'KnexJS', level: 'Beginner' },
+    { name: 'KnexJS', level: 'Intermediate' },
     { name: 'PostgreSQL', level: 'Intermediate' },
   ],
 };
 
 const Experience = () => (
-  <Section id="experience" header="My Experience" subheader="What Skills I Have">
+  <Section
+    id='experience'
+    header='My Experience'
+    subheader='What Skills I Have'
+  >
     <Container>
       {Object.keys(skills).map((skill, index) => (
         <DevelopmentBlock
           key={skill}
           variants={{
-            hidden: { x: (index ? 100 : -100), opacity: 0 },
+            hidden: { x: index ? 100 : -100, opacity: 0 },
             visible: { x: 0, opacity: 1, transition: { duration: 1 } },
           }}
-          initial="hidden"
-          whileInView="visible"
+          initial='hidden'
+          whileInView='visible'
           viewport={{ once: true }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 1.05 }}
         >
-          <h3>
-            {skill}
-            {' '}
-            Development
-          </h3>
+          <h3>{skill} Development</h3>
           <Skills>
             {skills[skill].map((skillItem) => (
               <SkillItem

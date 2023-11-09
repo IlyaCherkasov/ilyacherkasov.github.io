@@ -1,7 +1,8 @@
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import Section from 'components/Section';
+import styled from 'styled-components';
+
 import { ReactComponent as CheckSvg } from 'assets/simple-check.svg';
+import Section from 'components/Section';
 
 const Container = styled.div`
   display: flex;
@@ -52,6 +53,7 @@ const possibilities: Record<string, Array<string>> = {
   'CI/CD': [
     'Automatization based on Github Actions',
     'Automatization based on BitBucket Pipelines',
+    'Automatization based on Azure Pipelines',
     'Configuring CodeClimate',
     'Docker-based deployment',
   ],
@@ -64,6 +66,7 @@ const possibilities: Record<string, Array<string>> = {
     'Create JWT authentication system',
     'Dockerizing of web application',
     'Dockerizing of backend application',
+    'Single SPA',
   ],
   'Database Architecture': [
     'Creating architecture of database based on needed information',
@@ -72,7 +75,11 @@ const possibilities: Record<string, Array<string>> = {
 };
 
 const Possibilities = () => (
-  <Section id="possibilities" header="Services" subheader="What I Can Do For You">
+  <Section
+    id='possibilities'
+    header='Services'
+    subheader='What I Can Do For You'
+  >
     <Container>
       {Object.keys(possibilities).map((possibility) => (
         <Possibility
@@ -82,11 +89,11 @@ const Possibilities = () => (
             show: { y: 0, opacity: 1, transition: { duration: 1 } },
             hover: { scale: 1.1 },
           }}
-          initial="hidden"
-          whileInView="show"
+          initial='hidden'
+          whileInView='show'
           viewport={{ once: true }}
-          whileHover="hover"
-          whileTap="hover"
+          whileHover='hover'
+          whileTap='hover'
         >
           <Header>{possibility}</Header>
           <ul>
