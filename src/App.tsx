@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
   body,
   #root {
     width: 100%;
+    overflow-x: hidden;
     margin: 0;
     scroll-behavior: smooth;
     color: ${theme.colors.text};
