@@ -11,10 +11,10 @@
 
   height: min-content;
   padding: 0 0 1rem;
-  border: 1px solid rgb(from var(--color-purple) r g b / 55%);
+  border: 1px solid hsl(from var(--color-primary) h s calc(l * 0.85) / 55%);
   border-radius: 0 0 2rem 2rem;
 
-  background: rgb(from var(--color-purple) r g b / 55%);
+  background: hsl(from var(--color-primary) h s calc(l * 0.85) / 55%);
 
   & ul {
     display: flex;
@@ -45,6 +45,6 @@
 .header {
   padding: 1.5rem;
   border-radius: 0 0 2rem 2rem;
-  color: var(--color-purple);
+  color: var(--color-background);
   background: var(--color-primary);
 }

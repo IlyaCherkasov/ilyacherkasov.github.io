@@ -13,7 +13,7 @@
   padding: 0.5rem 1.5rem;
   border-radius: 100vh;
 
-  background: rgb(from var(--color-black) r g b / 33%);
+  background: rgb(from var(--color-background) r g b / 33%);
   backdrop-filter: blur(15px);
 
   transition: gap 0.3s ease-in-out;
@@ -29,7 +29,7 @@
   padding: 0.55rem;
   border-radius: 100vh;
 
-  color: var(--color-bright-lilac);
+  color: var(--color-primary);
 }
 
 .bubble {
@@ -39,7 +39,7 @@
   width: 2.1rem;
   border-radius: 100vh;
 
-  background: var(--color-purple);
+  background: hsl(from var(--color-secondary) h s calc(l * 0.5));
 }
 
 @media (width <= 768px) {

@@ -8,17 +8,17 @@
   flex: 1;
 
   padding: 2rem 4rem;
-  border: 1px solid rgb(from var(--color-purple) r g b / 55%);
+  border: 1px solid hsl(from var(--color-primary) h s calc(l * 0.85) / 55%);
   border-radius: 2rem;
 
   color: var(--color-white);
 
-  background-color: rgb(from var(--color-purple) r g b / 55%);
+  background-color: hsl(from var(--color-primary) h s calc(l * 0.85) / 55%);
 
   transition: background-color 0.3s ease-in-out;
 
   & h3 {
-    color: var(--color-bright-lilac);
+    color: var(--color-secondary);
   }
 }
 

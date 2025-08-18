@@ -7,6 +7,16 @@
 
   height: min-content;
 
+  & a {
+    display: flex;
+    align-items: center;
+
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+
+    background: hsl(from var(--color-primary) h s calc(l * 0.85) / 30%);
+  }
+
   & svg {
     width: 10rem;
     height: 5rem;

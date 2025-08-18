@@ -36,13 +36,11 @@
 
 .me {
   overflow: hidden;
+  flex-grow: 1;
 
-  aspect-ratio: 20/28;
-  width: calc(100% - 2rem);
-  max-width: 20rem;
-  max-height: 28rem;
+  aspect-ratio: 1;
   margin-top: 2rem;
-  padding: 1rem 2rem 0.5rem 0;
+  padding: 5rem 0 2rem;
   border-radius: 100vh 100vh 0 0;
 
   background: linear-gradient(var(--color-primary), transparent);
@@ -87,7 +85,7 @@
 
   &:hover,
   &:focus {
-    color: var(--color-gold);
+    color: var(--color-secondary);
   }
 }
 

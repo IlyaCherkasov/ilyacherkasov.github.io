@@ -1,13 +1,11 @@
 :root {
   /* colors */
-  --color-primary: #8d72ec;
+  --color-primary: #f0bfd6;
+  --color-secondary: #aad3fb;
   --color-text: #fff;
-  --color-background: #27134c;
+  --color-background: #9e3a58;
   --color-white: #fff;
   --color-black: #000;
-  --color-gold: #fdb827;
-  --color-purple: #542583;
-  --color-bright-lilac: #c095f8;
 }
 
 html,
@@ -59,7 +57,7 @@ a {
 
   :hover,
   :focus {
-    color: var(--color-gold);
+    color: var(--color-secondary);
   }
 }
 
@@ -68,7 +66,7 @@ a {
   flex-direction: column;
   align-items: center;
 
-  max-width: var(--breakpoint-desktop);
+  max-width: 1440px;
   margin: auto;
   padding-bottom: 10rem;
 

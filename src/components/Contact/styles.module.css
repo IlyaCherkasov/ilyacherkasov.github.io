@@ -21,10 +21,10 @@
   align-items: center;
 
   padding: 1rem 2rem;
-  border: 1px solid rgb(from var(--color-purple) r g b / 55%);
+  border: 1px solid hsl(from var(--color-primary) h s calc(l * 0.85) / 55%);
   border-radius: 1rem;
 
-  background-color: rgb(from var(--color-purple) r g b / 55%);
+  background-color: hsl(from var(--color-primary) h s calc(l * 0.85) / 55%);
 }
 
 .tileText {

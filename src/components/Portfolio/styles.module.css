@@ -12,12 +12,12 @@
 
   height: min-content;
   padding: 1.5rem;
-  border: 1px solid rgb(from var(--color-purple) r g b / 55%);
+  border: 1px solid hsl(from var(--color-primary) h s calc(l * 0.85) / 55%);
   border-radius: 2rem;
 
   text-align: left;
 
-  background-color: rgb(from var(--color-purple) r g b / 55%);
+  background-color: hsl(from var(--color-primary) h s calc(l * 0.85) / 55%);
 
   & h4 {
     width: 100%;
