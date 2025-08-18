@@ -1,6 +1,6 @@
-import { ReactComponent as GithubSvg } from 'assets/github.svg';
-import { ReactComponent as LinkedinSvg } from 'assets/linkedin.svg';
-import { ReactComponent as TelegramSvg } from 'assets/telegram.svg';
+import GithubSvg from 'assets/github.svg?react';
+import LinkedinSvg from 'assets/linkedin.svg?react';
+import TelegramSvg from 'assets/telegram.svg?react';
 
 const socialLinks = [
   {

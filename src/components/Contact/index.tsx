@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { motion } from 'framer-motion';
 
-import { ReactComponent as EmailSvg } from 'assets/email.svg';
-import { ReactComponent as PhoneSvg } from 'assets/phone.svg';
-import { ReactComponent as TelegramSvg } from 'assets/telegram.svg';
+import EmailSvg from 'assets/email.svg?react';
+import PhoneSvg from 'assets/phone.svg?react';
+import TelegramSvg from 'assets/telegram.svg?react';
 import PrimaryButton from 'components/PrimaryButton';
 import Section from 'components/Section';
 

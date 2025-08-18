@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-import { ReactComponent as CheckSvg } from 'assets/simple-check.svg';
+import CheckSvg from 'assets/simple-check.svg?react';
 import Section from 'components/Section';
 
 import styles from './styles.module.css';

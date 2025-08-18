@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 
-import { ReactComponent as CascanaSvg } from 'assets/cascana.svg';
-import { ReactComponent as HqoSvg } from 'assets/hqo.svg';
-import { ReactComponent as ItransitionSvg } from 'assets/itransition.svg';
-import { ReactComponent as KandaSvg } from 'assets/kanda.svg';
-import { ReactComponent as PuncherSvg } from 'assets/puncher.svg';
-import { ReactComponent as ShtormSvg } from 'assets/shtorm.svg';
+import CascanaSvg from 'assets/cascana.svg?react';
+import HqoSvg from 'assets/hqo.svg?react';
+import ItransitionSvg from 'assets/itransition.svg?react';
+import KandaSvg from 'assets/kanda.svg?react';
+import PuncherSvg from 'assets/puncher.svg?react';
+import ShtormSvg from 'assets/shtorm.svg?react';
 import Section from 'components/Section';
 
 import styles from './index.module.css';

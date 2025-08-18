@@ -1,4 +1,4 @@
-import { ReactComponent as CheckSvg } from 'assets/check.svg';
+import CheckSvg from 'assets/check.svg?react';
 
 import styles from './styles.module.css';
 

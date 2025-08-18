@@ -15,11 +15,11 @@
   padding: 0.5rem 1.5rem;
   border-radius: 2rem;
 
-  color: var(--color-black);
+  color: var(--color-background);
   text-align: center;
 
   opacity: 0;
-  background: var(--color-bright-lilac);
+  background: var(--color-secondary);
 
   transition: all 1s ease-in-out;
 }

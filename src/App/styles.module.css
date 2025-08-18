@@ -24,7 +24,7 @@ body,
   color: var(--color-text);
 
   background: var(--color-background);
-  background-image: url('assets/bg-texture.webp');
+  background-image: url('../assets/bg-texture.webp');
 }
 
 h1,

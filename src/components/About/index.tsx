@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 
 import Img from 'assets/about.webp';
-import { ReactComponent as MedalSvg } from 'assets/medal.svg';
-import { ReactComponent as ProjectsSvg } from 'assets/projects.svg';
-import { ReactComponent as UserSvg } from 'assets/users.svg';
+import MedalSvg from 'assets/medal.svg?react';
+import ProjectsSvg from 'assets/projects.svg?react';
+import UserSvg from 'assets/users.svg?react';
 import PrimaryButton from 'components/PrimaryButton';
 import Section from 'components/Section';
 import Tile from 'components/Tile';

@@ -1,8 +1,8 @@
-import { ReactComponent as ContactSvg } from 'assets/contact.svg';
-import { ReactComponent as ExperienceSvg } from 'assets/experience.svg';
-import { ReactComponent as HomeSvg } from 'assets/home.svg';
-import { ReactComponent as PossibilitiesSvg } from 'assets/possibilities.svg';
-import { ReactComponent as ProfileSvg } from 'assets/profile.svg';
+import ContactSvg from 'assets/contact.svg?react';
+import ExperienceSvg from 'assets/experience.svg?react';
+import HomeSvg from 'assets/home.svg?react';
+import PossibilitiesSvg from 'assets/possibilities.svg?react';
+import ProfileSvg from 'assets/profile.svg?react';
 
 const navigation = [
   {
