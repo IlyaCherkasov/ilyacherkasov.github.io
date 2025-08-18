@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 
-import CascanaSvg from 'assets/cascana.svg?react';
 import HqoSvg from 'assets/hqo.svg?react';
 import ItransitionSvg from 'assets/itransition.svg?react';
 import KandaSvg from 'assets/kanda.svg?react';
 import PuncherSvg from 'assets/puncher.svg?react';
 import ShtormSvg from 'assets/shtorm.svg?react';
+import WhyHappenSvg from 'assets/whyhappen.svg?react';
 import Section from 'components/Section';
 
 import styles from './index.module.css';
@@ -37,9 +37,9 @@ const companies = [
     logo: ShtormSvg,
   },
   {
-    title: 'Cascana: CEC',
-    href: 'https://cascana.ru',
-    logo: CascanaSvg,
+    title: 'WhyHappen',
+    href: 'https://whyhappen.com',
+    logo: WhyHappenSvg,
   },
 ];
 

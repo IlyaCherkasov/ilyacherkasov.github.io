@@ -1,6 +1,6 @@
+import AvelanaImg from 'assets/avelana.webp';
 import { motion } from 'framer-motion';
 
-import CascanaImg from 'assets/cascana.webp';
 import PuncherImg from 'assets/puncher.webp';
 import RdgaImg from 'assets/rdga.webp';
 import RpsImg from 'assets/rps.webp';
@@ -16,9 +16,9 @@ const portfolio = [
     image: PuncherImg,
   },
   {
-    title: 'Cascana: Customer Engagement Center',
-    demo: 'https://cascana.ru',
-    image: CascanaImg,
+    title: 'Avelana: Omni channel platform',
+    demo: 'https://avelana.ru',
+    image: AvelanaImg,
   },
   {
     title: 'Russian Disc-Golf Association',

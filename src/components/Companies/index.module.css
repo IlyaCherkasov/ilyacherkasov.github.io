@@ -11,7 +11,7 @@
     display: flex;
     align-items: center;
 
-    padding: 0 2rem;
+    padding: 0.5rem 2rem;
     border-radius: 1.5rem;
 
     background: hsl(from var(--color-primary) h s calc(l * 0.85) / 30%);

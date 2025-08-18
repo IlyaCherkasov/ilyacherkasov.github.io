@@ -25,6 +25,10 @@
   border-radius: 1rem;
 
   background-color: hsl(from var(--color-primary) h s calc(l * 0.85) / 55%);
+
+  & a:hover {
+    color: var(--color-secondary);
+  }
 }
 
 .tileText {
