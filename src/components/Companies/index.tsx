@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
 
 import { ReactComponent as CascanaSvg } from 'assets/cascana.svg';
 import { ReactComponent as HqoSvg } from 'assets/hqo.svg';
@@ -9,19 +8,7 @@ import { ReactComponent as PuncherSvg } from 'assets/puncher.svg';
 import { ReactComponent as ShtormSvg } from 'assets/shtorm.svg';
 import Section from 'components/Section';
 
-const Container = styled.div`
-  display: flex;
-  flex: 1;
-  flex-flow: row wrap;
-  gap: 1rem 5rem;
-  justify-content: center;
-  height: min-content;
-
-  svg {
-    width: 10rem;
-    height: 5rem;
-  }
-`;
+import styles from './index.module.css';
 
 const companies = [
   {
@@ -58,7 +45,7 @@ const companies = [
 
 const Companies = () => (
   <Section id='companies' header='Companies' subheader='Where I Worked'>
-    <Container>
+    <div className={styles.container}>
       {companies.map((company) => (
         <motion.a
           key={company.title}
@@ -80,7 +67,7 @@ const Companies = () => (
           <company.logo />
         </motion.a>
       ))}
-    </Container>
+    </div>
   </Section>
 );
 

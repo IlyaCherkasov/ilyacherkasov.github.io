@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-basis: 40%;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+
+  & svg {
+    margin-top: 0.4rem;
+    fill: var(--color-bright-lilac);
+  }
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  & h5 {
+    opacity: 0.6;
+  }
+}

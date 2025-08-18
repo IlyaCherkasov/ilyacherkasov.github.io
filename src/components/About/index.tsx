@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
 
 import Img from 'assets/about.webp';
 import { ReactComponent as MedalSvg } from 'assets/medal.svg';
@@ -10,68 +9,16 @@ import Section from 'components/Section';
 import Tile from 'components/Tile';
 import useWorkYears from 'helpers/useWorkYears';
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 35% 50%;
-  gap: 15%;
-  width: 100%;
-  text-align: left;
-
-  ${({ theme }) => theme.media.mobile} {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    text-align: center;
-  }
-`;
-
-const ImageContainer = styled(motion.div)`
-  width: 80%;
-  aspect-ratio: 1;
-  margin: auto;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    ${({ theme }) => theme.colors.primary},
-    transparent
-  );
-  border-radius: 2rem;
-
-  img {
-    border-radius: 2rem;
-  }
-`;
-
-const ContentContainer = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: flex-start;
-
-  ${({ theme }) => theme.media.mobile} {
-    align-items: center;
-    padding: 0 1rem;
-  }
-`;
-
-const Tiles = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  gap: 1rem;
-  width: 100%;
-
-  ${({ theme }) => theme.media.mobile} {
-    width: 100%;
-  }
-`;
+import styles from './styles.module.css';
 
 const About = () => {
   const workYears = useWorkYears();
 
   return (
     <Section id='about' header='About Me' subheader='Get To Know'>
-      <Container>
-        <ImageContainer
+      <div className={styles.container}>
+        <motion.div
+          className={styles.imageContainer}
           variants={{
             hidden: { x: -100, opacity: 0 },
             visible: { x: 0, opacity: 1 },
@@ -94,8 +41,9 @@ const About = () => {
             whileHover='normal'
             whileTap='normal'
           />
-        </ImageContainer>
-        <ContentContainer
+        </motion.div>
+        <motion.div
+          className={styles.contentContainer}
           variants={{
             hidden: { x: 100, opacity: 0 },
             visible: { x: 0, opacity: 1 },
@@ -105,7 +53,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <Tiles>
+          <div className={styles.tiles}>
             <Tile name='Experience' description={`${workYears}+ Years Working`}>
               <MedalSvg />
             </Tile>
@@ -115,7 +63,7 @@ const About = () => {
             <Tile name='Projects' description='3 Commercial'>
               <ProjectsSvg />
             </Tile>
-          </Tiles>
+          </div>
           I&apos;m a graduate of ITMO University. My bachelor degree was in
           sphere of Information Technologies and Programming at department of
           Information Systems. Started my career in university with small
@@ -139,8 +87,8 @@ const About = () => {
             whileHover='hover'
             whileTap='hover'
           />
-        </ContentContainer>
-      </Container>
+        </motion.div>
+      </div>
     </Section>
   );
 };

@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+  gap: 1rem 5rem;
+  justify-content: center;
+
+  height: min-content;
+
+  & svg {
+    width: 10rem;
+    height: 5rem;
+  }
+}

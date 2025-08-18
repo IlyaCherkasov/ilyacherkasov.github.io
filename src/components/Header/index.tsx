@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
 
 import MeImg from 'assets/main.webp';
 import { MOutlineButton } from 'components/OutlineButton';
@@ -7,131 +6,35 @@ import PrimaryButton from 'components/PrimaryButton';
 import socialLinks from 'helpers/socialLinks';
 import useCv from 'helpers/useCv';
 
-const Container = styled.header`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 90%;
-  height: 100vh;
-
-  ${({ theme }) => theme.media.mobile} {
-    height: auto;
-  }
-`;
-
-const Greetings = styled(motion.h5)`
-  margin: 5rem 0 0;
-  font-weight: 500;
-`;
-
-const Name = styled(motion.h1)`
-  font-weight: 500;
-  font-size: 2.5rem;
-`;
-
-const Position = styled(motion.h5)`
-  font-weight: 500;
-  opacity: 0.6;
-`;
-
-const CtaButtons = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 2rem;
-
-  ${({ theme }) => theme.media.mobile} {
-    overflow: hidden;
-  }
-`;
-
-const Me = styled(motion.div)`
-  width: calc(100% - 2rem);
-  max-width: 20rem;
-  max-height: 28rem;
-  aspect-ratio: 20/28;
-  margin-top: 2rem;
-  padding: 1rem 2rem 0.5rem 0;
-  overflow: hidden;
-  background: linear-gradient(
-    ${({ theme }) => theme.colors.primary},
-    transparent
-  );
-  border-radius: 100vh 100vh 0 0;
-`;
-
-const Socials = styled(motion.div)`
-  position: absolute;
-  bottom: 3rem;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
-  width: 20px;
-
-  ::after {
-    width: 1px;
-    height: 2rem;
-    background: ${({ theme }) => theme.colors.primary};
-    content: '';
-  }
-
-  ${({ theme }) => theme.media.mobile} {
-    display: none;
-  }
-`;
-
-const ScrollDown = styled(motion.a)`
-  position: absolute;
-  right: 0;
-  bottom: 4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
-  color: ${({ theme }) => theme.colors.primary};
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: color 0.3s ease-in-out;
-
-  :hover,
-  :focus {
-    color: ${({ theme }) => theme.colors.gold};
-  }
-
-  ${({ theme }) => theme.media.mobile} {
-    display: none;
-  }
-`;
+import styles from './styles.module.css';
 
 const Header = () => (
-  <Container>
-    <Greetings
+  <div className={styles.container}>
+    <motion.h5
+      className={styles.greetings}
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 0.5, duration: 1 }}
     >
       Hello, I&apos;m
-    </Greetings>
-    <Name
+    </motion.h5>
+    <motion.h1
+      className={styles.name}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ default: { duration: 1 } }}
     >
       Ilya Cherkasov
-    </Name>
-    <Position
+    </motion.h1>
+    <motion.h5
+      className={styles.position}
       initial={{ y: 50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 1, default: { duration: 1 } }}
     >
       TypeScript Developer
-    </Position>
-    <CtaButtons>
+    </motion.h5>
+    <div className={styles.ctaButtons}>
       <MOutlineButton
         name='Download CV'
         link={useCv()}
@@ -159,15 +62,17 @@ const Header = () => (
         whileHover='hover'
         whileTap='hover'
       />
-    </CtaButtons>
-    <Me
+    </div>
+    <motion.div
+      className={styles.me}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
       <img src={MeImg} alt='me' />
-    </Me>
-    <Socials
+    </motion.div>
+    <motion.div
+      className={styles.socials}
       initial={{ x: -50, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 1 }}
@@ -185,9 +90,10 @@ const Header = () => (
           {social.icon}
         </motion.a>
       ))}
-    </Socials>
-    <ScrollDown
+    </motion.div>
+    <motion.a
       href='#contact'
+      className={styles.scrollDown}
       variants={{
         hidden: { x: 80, opacity: 0, rotate: '90deg' },
         appear: {
@@ -204,8 +110,8 @@ const Header = () => (
       whileTap='hover'
     >
       Scroll Down
-    </ScrollDown>
-  </Container>
+    </motion.a>
+  </div>
 );
 
 export default Header;

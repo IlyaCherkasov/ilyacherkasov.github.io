@@ -1,53 +1,45 @@
+import { ReactNode } from 'react';
+
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
 
-const StyledSection = styled.section`
-  width: calc(100% - 2rem);
-  padding: 5rem 1rem 0;
-`;
+import styles from './styles.module.css';
 
-const Header = styled(motion.h2)`
-  margin: 0 0 1.5rem;
-  color: ${({ theme }) => theme.colors.primary};
-  font-size: 1.7rem;
-`;
 interface Props {
   id: string;
   header: string;
   subheader: string;
-  children: JSX.Element;
+  children: ReactNode;
 }
 
-const Section = ({
-  id, header, subheader, children,
-}: Props) => (
-  <StyledSection id={id}>
+const Section = ({ id, header, subheader, children }: Props) => (
+  <section id={id} className={styles.section}>
     <motion.h5
       variants={{
         hidden: { y: 50, opacity: 0 },
         visible: { y: 0, opacity: 1 },
       }}
-      initial="hidden"
-      whileInView="visible"
+      initial='hidden'
+      whileInView='visible'
       viewport={{ once: true }}
       transition={{ default: { duration: 1 } }}
     >
       {subheader}
     </motion.h5>
-    <Header
+    <motion.h2
+      className={styles.header}
       variants={{
         hidden: { y: 100, opacity: 0 },
         visible: { y: 0, opacity: 1 },
       }}
-      initial="hidden"
-      whileInView="visible"
+      initial='hidden'
+      whileInView='visible'
       viewport={{ once: true }}
       transition={{ default: { duration: 1 } }}
     >
       {header}
-    </Header>
+    </motion.h2>
     {children}
-  </StyledSection>
+  </section>
 );
 
 export default Section;

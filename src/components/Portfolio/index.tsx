@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import styled from 'styled-components';
 
 import CascanaImg from 'assets/cascana.webp';
 import PuncherImg from 'assets/puncher.webp';
@@ -9,52 +8,7 @@ import OutlineButton from 'components/OutlineButton';
 import PrimaryButton from 'components/PrimaryButton';
 import Section from 'components/Section';
 
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-
-  ${({ theme }) => theme.media.mobile} {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const Tile = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  height: min-content;
-  padding: 1.5rem;
-  text-align: left;
-  background-color: ${({ theme }) => theme.colors.purple}90;
-  border: 1px solid ${({ theme }) => theme.colors.purple}90;
-  border-radius: 2rem;
-
-  h4 {
-    width: 100%;
-    font-size: 1.1rem;
-  }
-`;
-
-const Image = styled.div<{ img: string }>`
-  width: 100%;
-  aspect-ratio: 1 / 0.7;
-  overflow: hidden;
-  background: url(${(props) => props.img});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-radius: 2rem;
-`;
-
-const Buttons = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  gap: 1rem;
-  justify-content: flex-start;
-  width: 100%;
-`;
+import styles from './styles.module.css';
 
 const portfolio = [
   {
@@ -82,10 +36,11 @@ const portfolio = [
 
 const Portfolio = () => (
   <Section id='portfolio' header='Portfolio' subheader='My Recent Work'>
-    <Container>
+    <div className={styles.container}>
       {portfolio.map((item, index) => (
-        <Tile
+        <motion.div
           key={item.title}
+          className={styles.tile}
           variants={{
             hidden: { x: index % 2 === 0 ? -100 : 100, opacity: 0 },
             show: { x: 0, opacity: 1, transition: { duration: 1 } },
@@ -97,9 +52,12 @@ const Portfolio = () => (
           whileHover='hover'
           whileTap='hover'
         >
-          <Image img={item.image} />
+          <div
+            className={styles.image}
+            style={{ '--image': `url('${item.image}')` } as React.CSSProperties}
+          />
           <h4>{item.title}</h4>
-          <Buttons>
+          <div className={styles.buttons}>
             {item.github && (
               <OutlineButton name='GitHub' link={item.github} target='_blank' />
             )}
@@ -113,10 +71,10 @@ const Portfolio = () => (
             {!item.demo && !item.github && (
               <h5>Application is not accessible :(</h5>
             )}
-          </Buttons>
-        </Tile>
+          </div>
+        </motion.div>
       ))}
-    </Container>
+    </div>
   </Section>
 );
 

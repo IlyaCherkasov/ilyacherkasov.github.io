@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 2rem;
+  border: 1px solid rgb(from var(--color-purple) r g b / 55%);
+  border-radius: 1rem;
+
+  color: var(--color-white);
+
+  background-color: rgb(from var(--color-purple) r g b / 55%);
+
+  transition: background-color 0.3s ease-in-out;
+
+  svg {
+    fill: var(--color-bright-lilac);
+  }
+}
+
+.name {
+  margin-top: 1rem;
+}
+
+.description {
+  font-weight: normal;
+  color: rgb(from var(--color-white) r g b / 50%);
+}

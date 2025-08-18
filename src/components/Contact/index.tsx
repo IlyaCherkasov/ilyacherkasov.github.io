@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import { motion } from 'framer-motion';
-import styled, { css } from 'styled-components';
 
 import { ReactComponent as EmailSvg } from 'assets/email.svg';
 import { ReactComponent as PhoneSvg } from 'assets/phone.svg';
@@ -9,72 +8,7 @@ import { ReactComponent as TelegramSvg } from 'assets/telegram.svg';
 import PrimaryButton from 'components/PrimaryButton';
 import Section from 'components/Section';
 
-const Container = styled.div`
-  display: flex;
-  flex-flow: row wrap;
-  gap: 2rem 8rem;
-  max-width: 52rem;
-  margin: auto;
-`;
-
-const ContactButtons = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin: auto;
-`;
-
-const ContactTile = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: ${({ theme }) => theme.colors.purple}90;
-  border: 1px solid ${({ theme }) => theme.colors.purple}90;
-  border-radius: 1rem;
-`;
-
-const TileText = styled.div`
-  color: ${({ theme }) => theme.colors.text}60;
-
-  h4 {
-    color: ${({ theme }) => theme.colors.text};
-  }
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 1rem;
-  align-items: flex-start;
-  justify-content: center;
-
-  ${({ theme }) => theme.media.mobile} {
-    align-items: center;
-  }
-`;
-
-const InputStyles = css`
-  width: calc(100% - 2rem);
-  padding: 1rem;
-  color: ${({ theme }) => theme.colors.white};
-  font-size: 1rem;
-  font-family: inherit;
-  line-height: 2rem;
-  background: none;
-  border: 1px solid ${({ theme }) => theme.colors.primary};
-  border-radius: 1rem;
-`;
-
-const Input = styled(motion.input)`
-  ${InputStyles}
-`;
-
-const TextArea = styled(motion.textarea)`
-  ${InputStyles}
-`;
+import styles from './styles.module.css';
 
 const contactData = [
   {
@@ -105,11 +39,12 @@ const Contact = () => {
   const [body, setBody] = useState('');
   return (
     <Section id='contact' header='Contact Me' subheader='Get In Touch'>
-      <Container>
-        <ContactButtons>
+      <div className={styles.container}>
+        <div className={styles.contactButtons}>
           {contactData.map((contact) => (
-            <ContactTile
+            <motion.div
               key={contact.name}
+              className={styles.contactTile}
               variants={{
                 hidden: { x: -100, opacity: 0 },
                 show: { x: 0, opacity: 1, transition: { duration: 1 } },
@@ -122,18 +57,19 @@ const Contact = () => {
               whileTap='hover'
             >
               {contact.icon}
-              <TileText>
+              <div className={styles.tileText}>
                 <h4>{contact.name}</h4>
                 {contact.nickname}
-              </TileText>
+              </div>
               <a href={contact.link} target='_blank' rel='noreferrer'>
                 {contact.cta}
               </a>
-            </ContactTile>
+            </motion.div>
           ))}
-        </ContactButtons>
-        <Form>
-          <Input
+        </div>
+        <form className={styles.form}>
+          <motion.input
+            className={styles.input}
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
             placeholder='Enter subject of your message'
@@ -147,7 +83,8 @@ const Contact = () => {
             viewport={{ once: true }}
             whileFocus='focus'
           />
-          <TextArea
+          <motion.textarea
+            className={styles.input}
             value={body}
             onChange={(e) => setBody(e.target.value)}
             placeholder='Enter your message'
@@ -176,8 +113,8 @@ const Contact = () => {
             whileHover='hover'
             whileTap='hover'
           />
-        </Form>
-      </Container>
+        </form>
+      </div>
     </Section>
   );
 };
