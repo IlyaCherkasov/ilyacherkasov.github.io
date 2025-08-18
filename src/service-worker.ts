@@ -1,5 +1,4 @@
 /// <reference lib="webworker" />
-/* eslint-disable */
 
 import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
@@ -13,23 +12,19 @@ clientsClaim();
 
 precacheAndRoute(self.__WB_MANIFEST);
 
-registerRoute(
-  ({ url }: { request: Request; url: URL }) => {
-    if (url.pathname === '/') return true;
+registerRoute(({ url }: { request: Request; url: URL }) => {
+  if (url.pathname === '/') return true;
 
-    return false;
-  },
-  createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
-);
+  return false;
+}, createHandlerBoundToURL('/index.html'));
 
 registerRoute(
-  ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.webp'),
+  ({ url }) =>
+    url.origin === self.location.origin && url.pathname.endsWith('.webp'),
   new StaleWhileRevalidate({
     cacheName: 'images',
-    plugins: [
-      new ExpirationPlugin({ maxEntries: 50 }),
-    ],
-  })
+    plugins: [new ExpirationPlugin({ maxEntries: 50 })],
+  }),
 );
 
 self.addEventListener('message', (event) => {
