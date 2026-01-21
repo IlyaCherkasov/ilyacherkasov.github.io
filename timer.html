@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
@@ -19,9 +19,19 @@
 
       body {
         margin: 0;
-        font-family: system-ui, -apple-system, 'Segoe UI', Roboto,
-          'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif,
-          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        font-family:
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          'Helvetica Neue',
+          Arial,
+          'Noto Sans',
+          'Liberation Sans',
+          sans-serif,
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol',
           'Noto Color Emoji';
         font-size: 1rem;
         font-weight: 400;
@@ -30,10 +40,27 @@
         background-color: #fff;
         -webkit-text-size-adjust: 100%;
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+      }
+
+      body > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 10%);
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      p {
+        font-size: 30px;
+        margin: 0;
+        color: #FDB827;
+        margin-bottom: -15px;
       }
 
       .timer {
@@ -43,34 +70,39 @@
         justify-items: center;
       }
 
-      .timer__item {
+      .timer__item, .separator {
         position: relative;
+        font-weight: 700;
+        color: green
       }
 
       .timer__item::before {
         content: attr(data-title);
         display: block;
         position: absolute;
-        bottom: -0.75rem;
+        bottom: -0.50rem;
         left: 50%;
         transform: translateX(-50%);
         font-size: 0.875rem;
-        color: #424242;
+        font-weight: 700;
+        color: white;
       }
     </style>
   </head>
 
   <body>
-    <div class="timer">
-      <div class="timer__item timer__days">00</div>
-      <div class="separator">:</div>
-      <div class="timer__item timer__hours">00</div>
-      <div class="separator">:</div>
-      <div class="timer__item timer__minutes">00</div>
-      <div class="separator">:</div>
-      <div class="timer__item timer__seconds">00</div>
+    <div>
+      <p>Стрим уже идет:</p>
+      <div class="timer">
+        <div class="timer__item timer__days">00</div>
+        <div class="separator">:</div>
+        <div class="timer__item timer__hours">00</div>
+        <div class="separator">:</div>
+        <div class="timer__item timer__minutes">00</div>
+        <div class="separator">:</div>
+        <div class="timer__item timer__seconds">00</div>
+      </div>
     </div>
-
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         // Установите конечную дату
